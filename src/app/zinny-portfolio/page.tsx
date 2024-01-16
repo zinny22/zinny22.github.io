@@ -1,8 +1,8 @@
 /** @format */
 
-import Header from "@/components/Header";
+import Header from "../../components/Header";
 
-function ZinyPortFolioPage() {
+function ZinyPortfolioPage() {
   return (
     <div>
       <Header />
@@ -10,4 +10,4 @@ function ZinyPortFolioPage() {
   );
 }
 
-export default ZinyPortFolioPage;
+export default ZinyPortfolioPage;
