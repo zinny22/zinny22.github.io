@@ -2,7 +2,7 @@
   "name": "zinny",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://zinny22.github.io/zinny-portfolio",
+  "homepage": "https://zinny22.github.io",
   "scripts": {
     "dev": "next dev",
     "build": "next build ",
