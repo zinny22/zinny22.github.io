@@ -6,7 +6,7 @@ import { prefix } from "@/config/config";
 
 export default function Home() {
   return (
-    <PortfolioProvider value={{ prefix }}>
+    <PortfolioProvider value={prefix}>
       <div>
         <Header />
       </div>
