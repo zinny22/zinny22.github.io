@@ -1,12 +1,15 @@
 /** @format */
 
 import Header from "@/Components/Header";
-import Image from "next/image";
+import { PortfolioProvider } from "@/context/context";
+import { prefix } from "@/config/config";
 
 export default function Home() {
   return (
-    <div>
-      <Header />
-    </div>
+    <PortfolioProvider value={{ prefix }}>
+      <div>
+        <Header />
+      </div>
+    </PortfolioProvider>
   );
 }
