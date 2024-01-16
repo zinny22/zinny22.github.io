@@ -4,7 +4,7 @@
  */
 
 const debug = process.env.NODE_ENV !== "production";
-const repository = "ziny-portfolio";
+const repository = "zinny-portfolio";
 
 const nextConfig = {
   output: "export",
