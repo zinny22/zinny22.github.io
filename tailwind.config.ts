@@ -13,8 +13,18 @@ const config: Config = {
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors: {
+        point: "#ff8900",
+      },
+    },
+    screens: {
+      mobile: "360px",
+      tablet: "640px",
+      laptop: "1024px",
+      desktop: "1280px",
     },
   },
   plugins: [],
