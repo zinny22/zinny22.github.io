@@ -1,5 +1,3 @@
-/** @format */
-
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -18,6 +16,7 @@ const config: Config = {
       },
       colors: {
         point: "#ff8900",
+        pointBg: "#ffb783",
       },
     },
     screens: {
