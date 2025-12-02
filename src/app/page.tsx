@@ -6,14 +6,15 @@ import { Experience } from "@/components/sections/experience";
 
 export default function Home() {
   return (
-    <div className="container pb-20">
-      <Hero />
+    <main className="relative flex min-h-screen flex-col items-center">
+      {/* Global Background Pattern */}
+      <div className="fixed inset-0 -z-50 h-full w-full bg-background bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
 
-      {/* Placeholder for future sections */}
+      <Hero />
       <About />
       <Experience />
       <Projects />
       <Contact />
-    </div>
+    </main>
   );
 }

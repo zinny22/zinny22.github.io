@@ -20,48 +20,105 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-
-const projects = [
-  {
-    title: "E-commerce Dashboard",
-    description:
-      "A comprehensive dashboard for managing online stores. Features include real-time analytics, inventory management, and order processing.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Recharts"],
-    link: "#",
-    github: "#",
-  },
-  {
-    title: "Task Management App",
-    description:
-      "A collaborative task management tool with drag-and-drop functionality, real-time updates, and team workspaces.",
-    tags: ["React", "Redux", "Node.js", "Socket.io"],
-    link: "#",
-    github: "#",
-  },
-  {
-    title: "Weather Forecast",
-    description:
-      "A beautiful weather application providing detailed forecasts, interactive maps, and severe weather alerts.",
-    tags: ["Vue.js", "OpenWeather API", "Chart.js"],
-    link: "#",
-    github: "#",
-  },
-  {
-    title: "Portfolio Website",
-    description:
-      "A modern portfolio website built with Next.js and Tailwind CSS, featuring smooth animations and a responsive design.",
-    tags: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
-    link: "#",
-    github: "#",
-  },
-];
+import { useLanguage } from "@/components/language-provider";
 
 export function Projects() {
+  const { language } = useLanguage();
+
+  const projects = {
+    ko: [
+      {
+        title: "E-commerce Admin System",
+        description:
+          "정산 및 결제 관리를 위한 종합 어드민 대시보드입니다. CI/CD 파이프라인, 반응형 UI, Shadcn/ui 기반의 커스텀 컴포넌트 라이브러리를 포함합니다.",
+        tags: ["Next.js", "TypeScript", "Nest.js", "Zustand", "Shadcn/ui"],
+        link: "#",
+        github: "https://github.com/zinny22",
+      },
+      {
+        title: "Supplement Commerce Platform",
+        description:
+          "SEO와 성능에 초점을 맞춘 영양제 커머스 플랫폼입니다. 기술적 SEO를 통해 월간 트래픽 1만 명을 달성했으며, 레거시 시스템을 모던 기술 스택으로 마이그레이션했습니다.",
+        tags: ["Next.js", "React-Tiptap", "Storybook", "Tailwind CSS"],
+        link: "#",
+        github: "https://github.com/zinny22",
+      },
+      {
+        title: "Social Cooking App",
+        description:
+          "요리를 주제로 한 소셜 네트워킹 애플리케이션입니다. 아임포트 결제, 실시간 채팅, 푸시 알림 시스템을 특징으로 합니다.",
+        tags: ["React Native", "Next.js", "Redux Toolkit", "Styled-components"],
+        link: "#",
+        github: "https://github.com/zinny22",
+      },
+      {
+        title: "Portfolio Website",
+        description:
+          "Next.js 14와 Tailwind CSS로 제작된 모던 개발자 포트폴리오입니다. 부드러운 애니메이션, 다크 모드, 반응형 디자인을 특징으로 합니다.",
+        tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+        link: "https://zinny22.github.io",
+        github: "https://github.com/zinny22/zinny22.github.io",
+      },
+    ],
+    en: [
+      {
+        title: "E-commerce Admin System",
+        description:
+          "A comprehensive admin dashboard for settlement and payment management. Features include CI/CD pipelines, responsive UI, and a custom component library built with Shadcn/ui.",
+        tags: ["Next.js", "TypeScript", "Nest.js", "Zustand", "Shadcn/ui"],
+        link: "#",
+        github: "https://github.com/zinny22",
+      },
+      {
+        title: "Supplement Commerce Platform",
+        description:
+          "An e-commerce platform focused on SEO and performance. Achieved 10k monthly traffic through technical SEO and migrated legacy systems to modern tech stacks.",
+        tags: ["Next.js", "React-Tiptap", "Storybook", "Tailwind CSS"],
+        link: "#",
+        github: "https://github.com/zinny22",
+      },
+      {
+        title: "Social Cooking App",
+        description:
+          "A social networking application centered around cooking. Features in-app payments (I'mport), real-time chat, and push notification systems.",
+        tags: ["React Native", "Next.js", "Redux Toolkit", "Styled-components"],
+        link: "#",
+        github: "https://github.com/zinny22",
+      },
+      {
+        title: "Portfolio Website",
+        description:
+          "A modern developer portfolio built with Next.js 14 and Tailwind CSS. Features smooth animations, a dark mode, and a responsive design.",
+        tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+        link: "https://zinny22.github.io",
+        github: "https://github.com/zinny22/zinny22.github.io",
+      },
+    ],
+  };
+
+  const content = {
+    ko: {
+      sectionTitle: "Featured Projects",
+      sectionSubtitle:
+        "제가 작업한 주요 프로젝트들입니다. 각각의 프로젝트는 새로운 도전과 배움의 기회였습니다.",
+      technologies: "Technologies",
+      links: "Links",
+      liveDemo: "Live Demo",
+      github: "GitHub",
+    },
+    en: {
+      sectionTitle: "Featured Projects",
+      sectionSubtitle:
+        "Here are some of the projects I've worked on. Each one represents a unique challenge and a learning opportunity.",
+      technologies: "Technologies",
+      links: "Links",
+      liveDemo: "Live Demo",
+      github: "GitHub",
+    },
+  };
+
   return (
     <section id="projects" className="relative py-24 sm:py-32 overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 -z-20 h-full w-full bg-background bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-
       <div className="container flex flex-col gap-12">
         <div className="space-y-4 text-center flex flex-col items-center">
           <div className="inline-flex items-center rounded-full border px-3 py-1 text-sm font-medium bg-secondary text-secondary-foreground w-fit">
@@ -72,13 +129,12 @@ export function Projects() {
             Featured <span className="text-primary">Projects</span>
           </h2>
           <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-            Here are some of the projects I've worked on. Each one represents a
-            unique challenge and a learning opportunity.
+            {content[language].sectionSubtitle}
           </p>
         </div>
 
         <div className="grid gap-8 tablet:grid-cols-2">
-          {projects.map((project, index) => (
+          {projects[language].map((project, index) => (
             <Dialog key={index}>
               <DialogTrigger asChild>
                 <Card className="flex flex-col overflow-hidden border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/50 hover:shadow-lg transition-all duration-300 group cursor-pointer">
@@ -148,7 +204,9 @@ export function Projects() {
                   </div>
                   <div className="space-y-4">
                     <div>
-                      <h4 className="font-medium mb-2">Technologies</h4>
+                      <h4 className="font-medium mb-2">
+                        {content[language].technologies}
+                      </h4>
                       <div className="flex flex-wrap gap-2">
                         {project.tags.map((tag) => (
                           <Badge key={tag} variant="secondary">
@@ -158,16 +216,20 @@ export function Projects() {
                       </div>
                     </div>
                     <div>
-                      <h4 className="font-medium mb-2">Links</h4>
+                      <h4 className="font-medium mb-2">
+                        {content[language].links}
+                      </h4>
                       <div className="flex gap-4">
                         <Button asChild size="sm">
                           <Link href={project.link} target="_blank">
-                            <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
+                            <ExternalLink className="mr-2 h-4 w-4" />{" "}
+                            {content[language].liveDemo}
                           </Link>
                         </Button>
                         <Button asChild variant="outline" size="sm">
                           <Link href={project.github} target="_blank">
-                            <Github className="mr-2 h-4 w-4" /> GitHub
+                            <Github className="mr-2 h-4 w-4" />{" "}
+                            {content[language].github}
                           </Link>
                         </Button>
                       </div>

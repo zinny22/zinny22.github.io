@@ -4,10 +4,12 @@ import { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/mode-toggle";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Languages } from "lucide-react";
+import { useLanguage } from "@/components/language-provider";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { language, setLanguage } = useLanguage();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -44,7 +46,19 @@ export function Header() {
           </nav>
         </div>
         <div className="flex items-center space-x-2">
-          <ModeToggle />
+          <div className="flex items-center gap-2">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setLanguage(language === "ko" ? "en" : "ko")}
+              title={language === "ko" ? "Switch to English" : "한국어로 전환"}
+            >
+              <span className="font-bold text-xs">
+                {language === "ko" ? "KR" : "EN"}
+              </span>
+            </Button>
+            <ModeToggle />
+          </div>
           <Button
             asChild
             variant="default"

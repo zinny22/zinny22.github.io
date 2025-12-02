@@ -1,12 +1,55 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowRight, Github, Laptop, Terminal } from "lucide-react";
+import { useLanguage } from "@/components/language-provider";
 
 export function Hero() {
+  const { language } = useLanguage();
+
+  const content = {
+    ko: {
+      status: "새로운 프로젝트를 기다리고 있어요",
+      title: (
+        <>
+          Building <span className="text-primary">Digital</span> <br />
+          Experiences That <span className="text-point">Matter</span>
+        </>
+      ),
+      description: (
+        <>
+          안녕하세요,{" "}
+          <span className="font-semibold text-foreground">Zinny</span>
+          입니다. 모던 프론트엔드 기술을 사용하여 접근성 높고, 픽셀 퍼펙트하며,
+          성능이 뛰어난 웹 경험을 만듭니다.
+        </>
+      ),
+      viewProjects: "프로젝트 보기",
+      githubProfile: "Github 프로필",
+    },
+    en: {
+      status: "Available for new projects",
+      title: (
+        <>
+          Building <span className="text-primary">Digital</span> <br />
+          Experiences That <span className="text-point">Matter</span>
+        </>
+      ),
+      description: (
+        <>
+          Hi, I'm <span className="font-semibold text-foreground">Zinny</span>.
+          I craft accessible, pixel-perfect, and performant web experiences
+          using modern frontend technologies.
+        </>
+      ),
+      viewProjects: "View Projects",
+      githubProfile: "Github Profile",
+    },
+  };
+
   return (
-    <section className="relative flex min-h-[90vh] flex-col items-center justify-center overflow-hidden py-20 md:py-32">
-      {/* Grid Background */}
-      <div className="absolute inset-0 -z-20 h-full w-full bg-background bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+    <section className="relative flex min-h-[60vh] flex-col items-center justify-center overflow-hidden pt-20 pb-10 md:pt-32 md:pb-16">
       <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-primary/20 opacity-20 blur-[100px]"></div>
 
       <div className="container grid gap-12 tablet:grid-cols-2 items-center">
@@ -14,29 +57,27 @@ export function Hero() {
         <div className="flex flex-col items-start text-left space-y-6 animate-in fade-in slide-in-from-bottom-8 duration-1000">
           <div className="inline-flex items-center rounded-full border px-3 py-1 text-sm font-medium bg-secondary text-secondary-foreground">
             <span className="flex h-2 w-2 rounded-full bg-green-500 mr-2 animate-pulse"></span>
-            Available for new projects
+            {content[language].status}
           </div>
 
           <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
-            Building <span className="text-primary">Digital</span> <br />
-            Experiences That <span className="text-point">Matter</span>
+            {content[language].title}
           </h1>
 
           <p className="max-w-[600px] text-muted-foreground md:text-xl">
-            Hi, I'm <span className="font-semibold text-foreground">Zinny</span>
-            . I craft accessible, pixel-perfect, and performant web experiences
-            using modern frontend technologies.
+            {content[language].description}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
             <Button asChild size="lg" className="gap-2">
               <Link href="#projects">
-                View Projects <ArrowRight className="h-4 w-4" />
+                {content[language].viewProjects}{" "}
+                <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="gap-2">
               <Link href="https://github.com/zinny22" target="_blank">
-                <Github className="h-4 w-4" /> Github Profile
+                <Github className="h-4 w-4" /> {content[language].githubProfile}
               </Link>
             </Button>
           </div>

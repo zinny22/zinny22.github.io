@@ -1,46 +1,68 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  Github,
-  Linkedin,
-  Mail,
-  MessageSquare,
-  Send,
-  Twitter,
-} from "lucide-react";
+import { BookOpen, Github, Mail, MessageSquare, Send } from "lucide-react";
 import Link from "next/link";
+import { useLanguage } from "@/components/language-provider";
 
 export function Contact() {
+  const { language } = useLanguage();
+
+  const content = {
+    ko: {
+      label: "Contact",
+      title: (
+        <>
+          함께 <span className="text-primary">일해볼까요?</span>
+        </>
+      ),
+      description:
+        "현재 새로운 기회를 찾고 있습니다. 프로젝트 제안이나 궁금한 점이 있다면 언제든 편하게 연락주세요!",
+      button: "메일 보내기",
+      cardTitle: "메세지 보내기",
+      cardDescription: "보통 24시간 이내에 답장드립니다.",
+    },
+    en: {
+      label: "Contact",
+      title: (
+        <>
+          Let's Work <span className="text-primary">Together</span>
+        </>
+      ),
+      description:
+        "I'm currently looking for new opportunities. Whether you have a question, a project idea, or just want to say hi, I'll try my best to get back to you!",
+      button: "Say Hello",
+      cardTitle: "Send me a message",
+      cardDescription: "I usually respond within 24 hours",
+    },
+  };
+
   return (
     <section id="contact" className="relative py-24 sm:py-32 overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 -z-20 h-full w-full bg-background bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-
       <div className="container max-w-5xl">
         <div className="grid gap-12 tablet:grid-cols-2 items-center">
           <div className="flex flex-col items-start text-left space-y-6">
             <div className="inline-flex items-center rounded-full border px-3 py-1 text-sm font-medium bg-secondary text-secondary-foreground w-fit">
               <MessageSquare className="h-3 w-3 mr-2" />
-              Contact
+              {content[language].label}
             </div>
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-              Let's Work <span className="text-primary">Together</span>
+              {content[language].title}
             </h2>
             <p className="text-muted-foreground md:text-xl leading-relaxed max-w-md">
-              I'm currently looking for new opportunities. Whether you have a
-              question, a project idea, or just want to say hi, I'll try my best
-              to get back to you!
+              {content[language].description}
             </p>
             <div className="flex gap-4">
               <Button asChild size="lg" className="gap-2">
-                <Link href="mailto:contact@example.com">
-                  <Mail className="h-4 w-4" /> Say Hello
+                <Link href="mailto:hziny722@naver.com">
+                  <Mail className="h-4 w-4" /> {content[language].button}
                 </Link>
               </Button>
               <div className="flex gap-2">
                 <Button asChild variant="outline" size="icon">
                   <Link
-                    href="https://github.com"
+                    href="https://github.com/zinny22"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -50,22 +72,12 @@ export function Contact() {
                 </Button>
                 <Button asChild variant="outline" size="icon">
                   <Link
-                    href="https://linkedin.com"
+                    href="https://zinny-22.tistory.com"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <Linkedin className="h-4 w-4" />
-                    <span className="sr-only">LinkedIn</span>
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" size="icon">
-                  <Link
-                    href="https://twitter.com"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <Twitter className="h-4 w-4" />
-                    <span className="sr-only">Twitter</span>
+                    <BookOpen className="h-4 w-4" />
+                    <span className="sr-only">Tistory Blog</span>
                   </Link>
                 </Button>
               </div>
@@ -83,13 +95,15 @@ export function Contact() {
                   <Send className="h-8 w-8 text-primary" />
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-xl font-bold">Send me a message</h3>
+                  <h3 className="text-xl font-bold">
+                    {content[language].cardTitle}
+                  </h3>
                   <p className="text-sm text-muted-foreground">
-                    I usually respond within 24 hours
+                    {content[language].cardDescription}
                   </p>
                 </div>
                 <div className="w-full p-4 rounded-lg bg-muted/50 text-sm font-mono text-left break-all">
-                  contact@example.com
+                  hziny722@naver.com
                 </div>
               </CardContent>
             </Card>
