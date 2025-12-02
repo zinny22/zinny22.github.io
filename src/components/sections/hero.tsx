@@ -55,16 +55,16 @@ export function Hero() {
       <div className="container grid gap-12 tablet:grid-cols-2 items-center">
         {/* Left Column: Text Content */}
         <div className="flex flex-col items-start text-left space-y-6 animate-in fade-in slide-in-from-bottom-8 duration-1000">
-          <div className="inline-flex items-center rounded-full border px-3 py-1 text-sm font-medium bg-secondary text-secondary-foreground">
+          <div className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium sm:text-sm sm:px-3 sm:py-1 bg-secondary text-secondary-foreground">
             <span className="flex h-2 w-2 rounded-full bg-green-500 mr-2 animate-pulse"></span>
             {content[language].status}
           </div>
 
-          <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
+          <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
             {content[language].title}
           </h1>
 
-          <p className="max-w-[600px] text-muted-foreground md:text-xl">
+          <p className="max-w-[600px] text-muted-foreground text-base sm:text-xl">
             {content[language].description}
           </p>
 

@@ -121,14 +121,14 @@ export function Projects() {
     <section id="projects" className="relative py-24 sm:py-32 overflow-hidden">
       <div className="container flex flex-col gap-12">
         <div className="space-y-4 text-center flex flex-col items-center">
-          <div className="inline-flex items-center rounded-full border px-3 py-1 text-sm font-medium bg-secondary text-secondary-foreground w-fit">
+          <div className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium sm:text-sm sm:px-3 sm:py-1 bg-secondary text-secondary-foreground w-fit">
             <Folder className="h-3 w-3 mr-2" />
             Portfolio
           </div>
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+          <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl lg:text-5xl">
             Featured <span className="text-primary">Projects</span>
           </h2>
-          <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
+          <p className="mx-auto max-w-[700px] text-muted-foreground text-base sm:text-xl">
             {content[language].sectionSubtitle}
           </p>
         </div>
@@ -145,7 +145,7 @@ export function Projects() {
                   </div>
                   <CardHeader>
                     <div className="flex items-center justify-between">
-                      <CardTitle className="text-xl group-hover:text-primary transition-colors">
+                      <CardTitle className="text-lg sm:text-xl group-hover:text-primary transition-colors">
                         {project.title}
                       </CardTitle>
                       <div

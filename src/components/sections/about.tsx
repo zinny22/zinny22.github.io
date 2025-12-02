@@ -145,21 +145,21 @@ export function About() {
         {/* Right Side: Content */}
         <div className="flex flex-col gap-8 min-w-0">
           <div className="space-y-4">
-            <div className="inline-flex items-center rounded-full border px-3 py-1 text-sm font-medium bg-secondary text-secondary-foreground w-fit">
+            <div className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium sm:text-sm sm:px-3 sm:py-1 bg-secondary text-secondary-foreground w-fit">
               <User2 className="h-3 w-3 mr-2" />
               About Me
             </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+            <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl lg:text-5xl">
               {content[language].title}
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed whitespace-pre-line">
+            <p className="text-base text-muted-foreground leading-relaxed whitespace-pre-line sm:text-lg">
               {content[language].description}
             </p>
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-xl font-semibold tracking-tight flex items-center gap-2">
-              <Database className="h-5 w-5" /> Tech Stack
+            <h3 className="text-lg font-semibold tracking-tight flex items-center gap-2 sm:text-xl">
+              <Database className="h-4 w-4 sm:h-5 sm:w-5" /> Tech Stack
             </h3>
 
             {/* Mobile View: Static Grid */}
