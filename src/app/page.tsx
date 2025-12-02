@@ -1,5 +1,6 @@
-import PortfolioPage from "@/Components/Pages/PortfolioPage";
 
 export default function Home() {
-  return <PortfolioPage />;
+  return <div>
+    포폴 사이트 제작
+  </div>
 }
