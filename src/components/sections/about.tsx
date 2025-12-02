@@ -143,7 +143,7 @@ export function About() {
         </div>
 
         {/* Right Side: Content */}
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-8 min-w-0">
           <div className="space-y-4">
             <div className="inline-flex items-center rounded-full border px-3 py-1 text-sm font-medium bg-secondary text-secondary-foreground w-fit">
               <User2 className="h-3 w-3 mr-2" />
@@ -161,7 +161,22 @@ export function About() {
             <h3 className="text-xl font-semibold tracking-tight flex items-center gap-2">
               <Database className="h-5 w-5" /> Tech Stack
             </h3>
-            <div className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background md:shadow-xl">
+
+            {/* Mobile View: Static Grid */}
+            <div className="flex flex-wrap gap-2 md:hidden">
+              {skills.map((skill, index) => (
+                <Badge
+                  key={index}
+                  variant="secondary"
+                  className="text-sm py-1 px-3"
+                >
+                  {skill}
+                </Badge>
+              ))}
+            </div>
+
+            {/* Desktop View: Animated Scroll */}
+            <div className="relative hidden w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background md:flex md:shadow-xl">
               <div className="flex w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_5%,white_95%,transparent)]">
                 <div className="flex w-max animate-scroll flex-nowrap gap-4 py-4 hover:[animation-play-state:paused]">
                   {[...skills, ...skills].map((skill, index) => (
