@@ -24,15 +24,15 @@ export function Experience() {
             <Briefcase className="h-3 w-3 mr-2" />
             Experience
           </div>
-          <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
-            {content.title}
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+            My <span className="text-primary">Experience</span>
           </h2>
           <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
             {content.subtitle}
           </p>
         </div>
 
-        <div className="w-full max-w-6xl mx-auto bg-card/70 backdrop-blur-sm border border-primary/20 rounded-2xl p-6 sm:p-10 shadow-xl">
+        <div className="w-full max-w-8xl mx-auto bg-card/70 backdrop-blur-sm border border-primary/20 rounded-2xl p-6 sm:p-10 shadow-xl">
           <div className="w-full space-y-6">
             {experiences.map((exp, index) => (
               <ExperienceItem key={index} experience={exp} />

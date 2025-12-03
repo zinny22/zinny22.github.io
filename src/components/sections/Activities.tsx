@@ -33,11 +33,11 @@ export function Activities() {
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 max-w-5xl mx-auto w-full">
+        <div className="grid gap-6 tablet:grid-cols-2 max-w-5xl mx-auto w-full">
           {activities.map((activity, index) => (
             <Card
               key={index}
-              className="bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-colors duration-300"
+              className="bg-card/50 backdrop-blur-sm border-border/50 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
             >
               <CardHeader className="pb-3">
                 <div className="flex justify-between items-start gap-4">

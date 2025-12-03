@@ -370,7 +370,7 @@ export const EXPERIENCES: Record<"ko" | "en", Experience[]> = {
 export const EXPERIENCE_CONTENT: Record<"ko" | "en", ExperienceContent> = {
   ko: {
     title: "경력",
-    subtitle: "저의 경력과 함께 성장한 회사들입니다.",
+    subtitle: "제가 함께 성장해 온 팀과 제품들입니다.",
     keyAchievements: "주요 성과",
   },
   en: {
