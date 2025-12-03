@@ -3,79 +3,109 @@
 import { Badge } from "@/components/ui/badge";
 import {
   Code2,
+  Coffee,
   Database,
+  Globe,
   Layout,
+  MapPin,
   Sparkles,
-  Terminal,
   User2,
 } from "lucide-react";
 import { useLanguage } from "@/components/language-provider";
-import { ABOUT_TEXTS, SKILLS } from "@/features/about/constants/about-data";
+import {
+  ABOUT_TEXTS,
+  PROFILE_INFO,
+  SKILLS,
+} from "@/features/about/constants/about-data";
+import { Card, CardContent } from "@/components/ui/card";
 
 export function About() {
   const { language } = useLanguage();
   const texts = ABOUT_TEXTS[language];
+  const profile = PROFILE_INFO[language];
 
   return (
     <section id="about" className="relative py-16 sm:py-24 overflow-hidden">
       <div className="container grid gap-12 lg:grid-cols-2 items-center w-full">
-        {/* Left Side: Visual/Stats Card */}
-        <div className="relative flex justify-center w-full max-w-md">
-          {/* Decorative blobs */}
-          <div className="absolute -left-4 -top-4 h-32 w-32 rounded-full bg-primary/20 blur-3xl"></div>
-          <div className="absolute -right-4 -bottom-4 h-32 w-32 rounded-full bg-point/20 blur-3xl"></div>
-
-          <div className="relative w-full !max-w-md overflow-hidden rounded-xl border border-border bg-background/95 shadow-2xl backdrop-blur-sm">
-            <div className="h-2 bg-gradient-to-r from-primary via-purple-500 to-point"></div>
-            <div className="p-8 space-y-8">
-              <div className="space-y-2 text-center">
-                <div className="flex items-center justify-center gap-2 text-primary font-mono text-sm">
-                  <Terminal className="h-4 w-4" />
-                  <span>whoami</span>
+        {/* Left Side: Bento Grid Profile */}
+        <div className="grid grid-cols-2 gap-4 w-full max-w-md mx-auto">
+          {/* Main Profile Card */}
+          <Card className="col-span-2 bg-card/50 backdrop-blur-sm border-muted/50 overflow-hidden group hover:border-primary/50 transition-colors">
+            <CardContent className="p-6 flex flex-col sm:flex-row items-center sm:items-start gap-6">
+              <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-tr from-primary to-point p-[2px] shrink-0">
+                <div className="w-full h-full rounded-full bg-background flex items-center justify-center overflow-hidden">
+                  {/* Avatar Image or Placeholder */}
+                  <span className="text-4xl select-none">👨‍💻</span>
                 </div>
-                <h3 className="text-2xl font-bold">Zinny</h3>
-                <p className="text-muted-foreground">Frontend Developer</p>
+                <div className="absolute bottom-0 right-0 w-6 h-6 rounded-full bg-green-500 border-4 border-background" />
               </div>
-
-              <div className="space-y-4 text-left">
-                <div className="flex items-center gap-4 p-3 rounded-lg bg-muted/50">
-                  <div className="p-2 rounded-md bg-background">
-                    <Code2 className="h-5 w-5 text-blue-500" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-medium">Clean Code</p>
-                    <p className="text-xs text-muted-foreground">
-                      Maintainable & Scalable
-                    </p>
-                  </div>
+              <div className="text-center sm:text-left space-y-2">
+                <div>
+                  <h3 className="text-xl font-bold">Zinny</h3>
+                  <p className="text-sm text-primary font-medium">
+                    {profile.role}
+                  </p>
                 </div>
-
-                <div className="flex items-center gap-4 p-3 rounded-lg bg-muted/50">
-                  <div className="p-2 rounded-md bg-background">
-                    <Layout className="h-5 w-5 text-purple-500" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-medium">Responsive Design</p>
-                    <p className="text-xs text-muted-foreground">
-                      Mobile-First Approach
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4 p-3 rounded-lg bg-muted/50">
-                  <div className="p-2 rounded-md bg-background">
-                    <Sparkles className="h-5 w-5 text-yellow-500" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-medium">Modern UI/UX</p>
-                    <p className="text-xs text-muted-foreground">
-                      Interactive Experiences
-                    </p>
-                  </div>
+                <div className="flex items-center justify-center sm:justify-start gap-2 text-xs text-muted-foreground">
+                  <MapPin className="w-3 h-3" />
+                  {profile.location}
                 </div>
               </div>
-            </div>
-          </div>
+            </CardContent>
+          </Card>
+
+          {/* Stats Cards */}
+          <Card className="bg-card/50 backdrop-blur-sm border-muted/50 hover:border-primary/50 transition-colors group">
+            <CardContent className="p-4 flex flex-col items-center justify-center text-center h-full gap-1">
+              <span className="text-2xl font-bold group-hover:text-primary transition-colors">
+                {profile.years}
+              </span>
+              <span className="text-xs text-muted-foreground">
+                {profile.yearsLabel}
+              </span>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-card/50 backdrop-blur-sm border-muted/50 hover:border-primary/50 transition-colors group">
+            <CardContent className="p-4 flex flex-col items-center justify-center text-center h-full gap-1">
+              <span className="text-2xl font-bold group-hover:text-point transition-colors">
+                {profile.projects}
+              </span>
+              <span className="text-xs text-muted-foreground">
+                {profile.projectsLabel}
+              </span>
+            </CardContent>
+          </Card>
+
+          {/* Detail Card */}
+          <Card className="col-span-2 bg-muted/30 border-none">
+            <CardContent className="p-4 flex items-center gap-4">
+              <div className="p-2 rounded-lg bg-background shadow-sm">
+                <Sparkles className="w-5 h-5 text-yellow-500" />
+              </div>
+              <div>
+                <p className="text-sm font-semibold">{profile.detailTitle}</p>
+                <p className="text-xs text-muted-foreground">
+                  {profile.detailDesc}
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Coffee Card (Wit) */}
+          <Card className="col-span-2 bg-card/50 backdrop-blur-sm border-muted/50 hover:border-primary/50 transition-colors">
+            <CardContent className="p-4 flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <div className="p-2 rounded-full bg-primary/10">
+                  <Coffee className="w-4 h-4 text-primary" />
+                </div>
+                <span className="text-sm font-medium">
+                  {profile.coffeeLabel}
+                </span>
+              </div>
+              <span className="font-mono text-lg">{profile.coffee}</span>
+            </CardContent>
+          </Card>
         </div>
 
         {/* Right Side: Content */}

@@ -49,3 +49,30 @@ I believe in writing meaningful code, even if it's just a single line.
 I enjoy taking on new challenges, surrounding the team with bright energy, and creating beautiful interfaces.`,
   },
 };
+
+export const PROFILE_INFO = {
+  ko: {
+    role: "Frontend Developer",
+    location: "Seoul, Republic of Korea",
+    years: "3+",
+    yearsLabel: "Years of Exp",
+    projects: "10+",
+    projectsLabel: "Projects",
+    coffee: "∞",
+    coffeeLabel: "Coffee",
+    detailTitle: "Detail-Oriented",
+    detailDesc: "Pixel Perfect & Clean Code",
+  },
+  en: {
+    role: "Frontend Developer",
+    location: "Seoul, Republic of Korea",
+    years: "3+",
+    yearsLabel: "Years of Exp",
+    projects: "10+",
+    projectsLabel: "Projects",
+    coffee: "∞",
+    coffeeLabel: "Coffee",
+    detailTitle: "Detail-Oriented",
+    detailDesc: "Pixel Perfect & Clean Code",
+  },
+};
