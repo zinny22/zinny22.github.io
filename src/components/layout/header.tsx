@@ -12,7 +12,7 @@ export function Header() {
   const { language, setLanguage } = useLanguage();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 print:hidden">
       <div className="container flex h-14 max-w-screen-2xl items-center justify-between">
         <div className="flex items-center">
           <Link className="mr-6 flex items-center space-x-2" href="/">
@@ -20,28 +20,34 @@ export function Header() {
           </Link>
           <nav className="hidden tablet:flex items-center gap-6 text-sm font-medium">
             <Link
-              href="#about"
+              href="/#about"
               className="transition-colors hover:text-primary text-muted-foreground"
             >
               About
             </Link>
             <Link
-              href="#experience"
+              href="/#experience"
               className="transition-colors hover:text-primary text-muted-foreground"
             >
               Experience
             </Link>
             <Link
-              href="#projects"
+              href="/#projects"
               className="transition-colors hover:text-primary text-muted-foreground"
             >
               Projects
             </Link>
             <Link
-              href="#contact"
+              href="/#contact"
               className="transition-colors hover:text-primary text-muted-foreground"
             >
               Contact
+            </Link>
+            <Link
+              href="/resume"
+              className="transition-colors hover:text-primary text-muted-foreground"
+            >
+              Resume
             </Link>
           </nav>
         </div>
@@ -85,32 +91,39 @@ export function Header() {
         <div className="tablet:hidden border-t p-4">
           <nav className="flex flex-col space-y-4">
             <Link
-              href="#about"
+              href="/#about"
               className="text-sm font-medium transition-colors hover:text-primary"
               onClick={() => setIsMenuOpen(false)}
             >
               About
             </Link>
             <Link
-              href="#experience"
+              href="/#experience"
               className="text-sm font-medium transition-colors hover:text-primary"
               onClick={() => setIsMenuOpen(false)}
             >
               Experience
             </Link>
             <Link
-              href="#projects"
+              href="/#projects"
               className="text-sm font-medium transition-colors hover:text-primary"
               onClick={() => setIsMenuOpen(false)}
             >
               Projects
             </Link>
             <Link
-              href="#contact"
+              href="/#contact"
               className="text-sm font-medium transition-colors hover:text-primary"
               onClick={() => setIsMenuOpen(false)}
             >
               Contact
+            </Link>
+            <Link
+              href="/resume"
+              className="text-sm font-medium transition-colors hover:text-primary"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Resume
             </Link>
             <Link
               href="mailto:contact@example.com"
