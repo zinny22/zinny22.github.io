@@ -1,9 +1,9 @@
-import { Projects } from "@/components/sections/Projects";
-import { Contact } from "@/components/sections/Contact";
-import { Experience } from "@/components/sections/Experience";
-import { Hero } from "@/components/sections/Hero1";
 import { About } from "@/components/sections/About1";
 import { Activities } from "@/components/sections/Activities";
+import { Experience } from "@/components/sections/Experience";
+import { Hero } from "@/components/sections/Hero1";
+import { Projects } from "@/components/sections/Projects";
+import { Contact } from "@/components/sections/Contact";
 
 export default function Home() {
   return (
