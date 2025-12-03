@@ -4,6 +4,8 @@ import { Projects } from "@/components/sections/projects";
 import { Contact } from "@/components/sections/contact";
 import { Experience } from "@/components/sections/experience";
 
+import { Activities } from "@/components/sections/activities";
+
 export default function Home() {
   return (
     <main className="relative flex min-h-screen flex-col items-center">
@@ -13,6 +15,7 @@ export default function Home() {
       <Hero />
       <About />
       <Experience />
+      <Activities />
       <Projects />
       <Contact />
     </main>

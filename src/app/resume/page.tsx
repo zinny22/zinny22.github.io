@@ -55,6 +55,46 @@ export default function ResumePage() {
           ],
         },
       ],
+      activities: [
+        {
+          name: "팀스파르타 로켓단 2기 ~ 3기",
+          role: "하이퍼캐주얼 게임 제작 프로젝트",
+          period: "2022.05 - 2022.07",
+          description: [
+            "Unity를 사용한 하이퍼캐주얼 게임 제작 경험",
+            "2D와 3D 두 가지 타입의 게임 기획, 제작 및 배포 경험",
+          ],
+        },
+        {
+          name: "스파르타코딩클럽 항해99 5기",
+          role: "웹 개발자 양성 부트캠프 - 프론트엔드 과정",
+          period: "2022.01 - 2022.04",
+          description: [
+            "총 5회 팀 프로젝트 진행 (미니 프로젝트 3회, 클론 코딩, 최종 프로젝트)",
+            "마지막 프로젝트에서 팀장을 맡아 팀 리딩 및 개발, 비개발군과의 협업 경험",
+          ],
+        },
+      ],
+      education: [
+        {
+          school: "한국방송통신대학",
+          major: "컴퓨터과학과",
+          period: "2025.03 - (재학중)",
+          status: "",
+        },
+        {
+          school: "대진대학교",
+          major: "국제 통상학과",
+          period: "2015.03 - 2020.03",
+          status: "졸업",
+        },
+        {
+          school: "쑤저우대학교",
+          major: "중어중문학",
+          period: "2016.03 - 2020.03",
+          status: "수료",
+        },
+      ],
       skills: [
         "React",
         "Next.js",
@@ -118,6 +158,46 @@ export default function ResumePage() {
             "Developed chat features and push notification systems for user engagement",
             "Established efficient communication workflows to prevent request loss in a fast-paced startup environment",
           ],
+        },
+      ],
+      activities: [
+        {
+          name: "Team Sparta Rocket Dan 2nd ~ 3rd Batch",
+          role: "Hyper-casual Game Development Project",
+          period: "May 2022 - Jul 2022",
+          description: [
+            "Experience in creating hyper-casual games using Unity",
+            "Experience in planning, developing, and deploying both 2D and 3D games",
+          ],
+        },
+        {
+          name: "Sparta Coding Club Hanghae99 5th Batch",
+          role: "Web Developer Bootcamp - Frontend Course",
+          period: "Jan 2022 - Apr 2022",
+          description: [
+            "Conducted 5 team projects (3 mini-projects, clone coding, final project)",
+            "Led the team in the final project, gaining experience in team leading, development, and collaboration with non-developers",
+          ],
+        },
+      ],
+      education: [
+        {
+          school: "Korea National Open University",
+          major: "Computer Science",
+          period: "Mar 2025 - Present",
+          status: "",
+        },
+        {
+          school: "Daejin University",
+          major: "International Trade",
+          period: "Mar 2015 - Mar 2020",
+          status: "Graduated",
+        },
+        {
+          school: "Soochow University",
+          major: "Chinese Language and Literature",
+          period: "Mar 2016 - Mar 2020",
+          status: "Certificate",
         },
       ],
       skills: [
@@ -232,6 +312,73 @@ export default function ResumePage() {
                       <li key={i}>{desc}</li>
                     ))}
                   </ul>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Activities */}
+          <section>
+            <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
+              <span className="w-1 h-8 bg-primary rounded-full inline-block"></span>
+              Activities
+            </h2>
+            <div className="space-y-8">
+              {t.activities.map((activity, index) => (
+                <div
+                  key={index}
+                  className="relative pl-8 border-l-2 border-border/50 last:border-0"
+                >
+                  <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-background border-2 border-primary"></div>
+                  <div className="mb-2">
+                    <h3 className="text-xl font-bold text-foreground">
+                      {activity.name}
+                    </h3>
+                    <div className="text-primary font-medium mb-1">
+                      {activity.role}
+                    </div>
+                    <div className="text-sm text-muted-foreground">
+                      {activity.period}
+                    </div>
+                  </div>
+                  <ul className="list-disc list-outside ml-4 space-y-1 text-muted-foreground">
+                    {activity.description.map((desc, i) => (
+                      <li key={i}>{desc}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Education */}
+          <section>
+            <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
+              <span className="w-1 h-8 bg-primary rounded-full inline-block"></span>
+              Education
+            </h2>
+            <div className="space-y-6">
+              {t.education.map((edu, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1"
+                >
+                  <div>
+                    <h3 className="text-lg font-bold text-foreground">
+                      {edu.school}
+                    </h3>
+                    <div className="text-muted-foreground">
+                      {edu.major}{" "}
+                      {edu.status && (
+                        <span className="text-sm text-muted-foreground/80">
+                          ({edu.status})
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                  <div className="text-sm text-muted-foreground font-medium bg-secondary/50 px-3 py-1 rounded-full inline-block sm:block w-fit mt-2 sm:mt-0">
+                    {edu.period}
+                  </div>
                 </div>
               ))}
             </div>

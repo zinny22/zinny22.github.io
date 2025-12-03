@@ -173,7 +173,7 @@ export function Experience() {
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto w-full bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 sm:p-10">
+        <div className="w-full bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 sm:p-10">
           <Accordion type="single" collapsible className="w-full">
             {experiences[language].map((exp, index) => (
               <AccordionItem
