@@ -144,7 +144,7 @@ export function Hero() {
         </div>
 
         <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl min-h-[72px] transition-all">
-          <span className="block">
+          <span className="block pb-1">
             {typedPrefix}{" "}
             <span className="text-primary">{typedHighlight1}</span>
           </span>

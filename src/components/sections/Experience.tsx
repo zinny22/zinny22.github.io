@@ -1,7 +1,6 @@
 "use client";
 
 import { Briefcase } from "lucide-react";
-import { Accordion } from "@/components/ui/accordion";
 import { useLanguage } from "@/components/language-provider";
 import {
   EXPERIENCES,
@@ -25,16 +24,16 @@ export function Experience() {
             <Briefcase className="h-3 w-3 mr-2" />
             Experience
           </div>
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-            Work <span className="text-primary">History</span>
+          <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
+            {content.title}
           </h2>
           <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
             {content.subtitle}
           </p>
         </div>
 
-        <div className="w-full bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 sm:p-10">
-          <Accordion type="single" collapsible className="w-full">
+        <div className="w-full max-w-6xl mx-auto bg-card/70 backdrop-blur-sm border border-primary/20 rounded-2xl p-6 sm:p-10 shadow-xl">
+          <div className="w-full space-y-6">
             {experiences.map((exp, index) => (
               <ExperienceItem
                 key={index}
@@ -43,7 +42,7 @@ export function Experience() {
                 value={`item-${index}`}
               />
             ))}
-          </Accordion>
+          </div>
         </div>
       </div>
     </section>
