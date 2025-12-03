@@ -10,75 +10,11 @@ import {
   User2,
 } from "lucide-react";
 import { useLanguage } from "@/components/language-provider";
-
-const skills = [
-  "React",
-  "Next.js",
-  "React Native",
-  "TypeScript",
-  "JavaScript (ES6+)",
-  "Redux Toolkit",
-  "React Query",
-  "Zustand",
-  "MobX",
-  "Tailwind CSS",
-  "Styled Components",
-  "Emotion",
-  "SCSS",
-  "HTML5",
-];
+import { ABOUT_TEXTS, SKILLS } from "@/features/about/constants/about-data";
 
 export function About() {
   const { language } = useLanguage();
-
-  const content = {
-    ko: {
-      title: (
-        <>
-          Turning Complex Problems into{" "}
-          <span className="text-primary">Simple Solutions</span>
-        </>
-      ),
-      description: (
-        <>
-          작은 규모의 스타트업에서 기획부터 배포까지 전 단계에 참여하며
-          성장했습니다.
-          <br />
-          더 좋은 사용자 경험을 제공하기 위해 고민하고, 토론하는 것을
-          좋아합니다.
-          <br />
-          <br />
-          한 줄의 코드를 작성하더라도 의미 있는 코드를 작성하는 것을 중요하게
-          생각합니다.
-          <br />
-          새로운 도전을 즐기며, 밝은 에너지로 팀을 감싸며 아름다운 인터페이스를
-          만드는 것을 좋아합니다.
-        </>
-      ),
-    },
-    en: {
-      title: (
-        <>
-          Turning Complex Problems into{" "}
-          <span className="text-primary">Simple Solutions</span>
-        </>
-      ),
-      description: (
-        <>
-          I have grown by participating in all stages from planning to
-          deployment in small-scale startups.
-          <br />
-          I enjoy thinking about and discussing ways to provide better user
-          experiences.
-          <br />
-          <br />
-          I believe in writing meaningful code, even if it's just a single line.
-          <br />I enjoy taking on new challenges, surrounding the team with
-          bright energy, and creating beautiful interfaces.
-        </>
-      ),
-    },
-  };
+  const texts = ABOUT_TEXTS[language];
 
   return (
     <section id="about" className="relative py-16 sm:py-24 overflow-hidden">
@@ -150,10 +86,11 @@ export function About() {
               About Me
             </div>
             <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl lg:text-5xl">
-              {content[language].title}
+              {texts.titlePrefix}{" "}
+              <span className="text-primary">{texts.titleHighlight}</span>
             </h2>
             <p className="text-base text-muted-foreground leading-relaxed whitespace-pre-line sm:text-lg">
-              {content[language].description}
+              {texts.description}
             </p>
           </div>
 
@@ -164,7 +101,7 @@ export function About() {
 
             {/* Mobile View: Static Grid */}
             <div className="flex flex-wrap gap-2 md:hidden">
-              {skills.map((skill, index) => (
+              {SKILLS.map((skill, index) => (
                 <Badge
                   key={index}
                   variant="secondary"
@@ -179,7 +116,7 @@ export function About() {
             <div className="relative hidden w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background md:flex md:shadow-xl">
               <div className="flex w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_5%,white_95%,transparent)]">
                 <div className="flex w-max animate-scroll flex-nowrap gap-4 py-4 hover:[animation-play-state:paused]">
-                  {[...skills, ...skills].map((skill, index) => (
+                  {[...SKILLS, ...SKILLS].map((skill, index) => (
                     <Badge
                       key={index}
                       variant="secondary"

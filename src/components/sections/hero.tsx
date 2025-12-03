@@ -4,49 +4,11 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowRight, Github, Laptop, Terminal } from "lucide-react";
 import { useLanguage } from "@/components/language-provider";
+import { HERO_CONTENT } from "@/features/hero/constants/hero-data";
 
 export function Hero() {
   const { language } = useLanguage();
-
-  const content = {
-    ko: {
-      status: "새로운 프로젝트를 기다리고 있어요",
-      title: (
-        <>
-          Building <span className="text-primary">Digital</span> <br />
-          Experiences That <span className="text-point">Matter</span>
-        </>
-      ),
-      description: (
-        <>
-          안녕하세요,{" "}
-          <span className="font-semibold text-foreground">Zinny</span>
-          입니다. 모던 프론트엔드 기술을 사용하여 접근성 높고, 픽셀 퍼펙트하며,
-          성능이 뛰어난 웹 경험을 만듭니다.
-        </>
-      ),
-      viewProjects: "프로젝트 보기",
-      githubProfile: "Github 프로필",
-    },
-    en: {
-      status: "Available for new projects",
-      title: (
-        <>
-          Building <span className="text-primary">Digital</span> <br />
-          Experiences That <span className="text-point">Matter</span>
-        </>
-      ),
-      description: (
-        <>
-          Hi, I'm <span className="font-semibold text-foreground">Zinny</span>.
-          I craft accessible, pixel-perfect, and performant web experiences
-          using modern frontend technologies.
-        </>
-      ),
-      viewProjects: "View Projects",
-      githubProfile: "Github Profile",
-    },
-  };
+  const content = HERO_CONTENT[language];
 
   return (
     <section className="relative flex min-h-[60vh] flex-col items-center justify-center overflow-hidden pt-20 pb-10 md:pt-32 md:pb-16">
@@ -57,27 +19,34 @@ export function Hero() {
         <div className="flex flex-col items-start text-left space-y-6 animate-in fade-in slide-in-from-bottom-8 duration-1000">
           <div className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium sm:text-sm sm:px-3 sm:py-1 bg-secondary text-secondary-foreground">
             <span className="flex h-2 w-2 rounded-full bg-green-500 mr-2 animate-pulse"></span>
-            {content[language].status}
+            {content.status}
           </div>
 
           <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
-            {content[language].title}
+            {content.titlePrefix}{" "}
+            <span className="text-primary">{content.titleHighlight1}</span>{" "}
+            <br />
+            {content.titleMiddle}{" "}
+            <span className="text-point">{content.titleHighlight2}</span>
           </h1>
 
           <p className="max-w-[600px] text-muted-foreground text-base sm:text-xl">
-            {content[language].description}
+            {content.descriptionPrefix}
+            <span className="font-semibold text-foreground">
+              {content.name}
+            </span>
+            {content.descriptionSuffix}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
             <Button asChild size="lg" className="gap-2">
               <Link href="#projects">
-                {content[language].viewProjects}{" "}
-                <ArrowRight className="h-4 w-4" />
+                {content.viewProjects} <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="gap-2">
               <Link href="https://github.com/zinny22" target="_blank">
-                <Github className="h-4 w-4" /> {content[language].githubProfile}
+                <Github className="h-4 w-4" /> {content.githubProfile}
               </Link>
             </Button>
           </div>
