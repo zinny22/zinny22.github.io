@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Database, MapPin, User2 } from "lucide-react";
 import { useLanguage } from "@/components/language-provider";
@@ -37,13 +38,18 @@ export function About() {
             </p>
           </div>
 
-          <Card className="w-full gird divide-y shadow-md order-1 tablet:order-2 ">
+          <Card className="w-full gird divide-y shadow-md order-1 tablet:order-2 hover:scale-105 hover:shadow-xl transition-all duration-300">
             <div className="p-6 flex flex-col sm:flex-row items-center sm:items-start gap-6">
-              <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-tr from-primary to-point p-[2px] shrink-0">
-                <div className="w-full h-full rounded-full bg-background flex items-center justify-center overflow-hidden">
-                  <span className="text-4xl select-none">👩🏻‍💻</span>
+              <div className="relative w-36 h-36 sm:w-24 sm:h-24 rounded-full bg-gradient-to-tr from-primary to-point p-[2px] shrink-0">
+                <div className="w-full h-full rounded-full overflow-hidden bg-background relative">
+                  <img
+                    src="/assets/ziny.png"
+                    alt="ziny profile"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <div className="absolute bottom-0 right-0 w-6 h-6 rounded-full bg-green-500 border-4 border-background" />
+
+                <div className="absolute bottom-0 right-0 w-10 h-10 rounded-full bg-green-500 border-4 border-green-50" />
               </div>
               <div className="text-center sm:text-left space-y-2">
                 <div>
