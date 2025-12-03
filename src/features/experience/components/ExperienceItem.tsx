@@ -2,28 +2,26 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Building2, Calendar, CheckCircle2 } from "lucide-react";
-import { Experience, ExperienceContent } from "../types";
+import { Experience } from "../types";
 import { cn } from "@/lib/utils";
 
 interface ExperienceItemProps {
   experience: Experience;
-  content: ExperienceContent;
-  value: string;
 }
 
-export function ExperienceItem({ experience, content }: ExperienceItemProps) {
+export function ExperienceItem({ experience }: ExperienceItemProps) {
   return (
-    <div className="relative border-l border-border/60 pl-6 pb-10 last:pb-0">
-      <div className="absolute -left-[6px] top-5 h-3 w-3 rounded-full bg-primary shadow-sm" />
+    <div className="relative tablet:border-l tablet:border-border/60 pl-0 tablet:pl-6 pb-10 last:pb-0">
+      <div className="hidden tablet:block absolute -left-[6px] top-5 h-3 w-3 rounded-full bg-primary shadow-sm" />
 
       <div className="flex flex-col gap-4 pb-6">
-        <div className="flex flex-col sm:flex-row sm:items-start gap-4 w-full justify-between">
-          <div className="flex gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-start gap-4 w-full">
+          <div className="flex gap-4 items-start">
             <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
               <Building2 className="h-6 w-6 text-primary" />
             </div>
 
-            <div className="flex items-start justify-between w-full">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between w-full gap-3">
               <div>
                 <h3 className="text-xl font-semibold pb-1">
                   {experience.position}
@@ -39,7 +37,7 @@ export function ExperienceItem({ experience, content }: ExperienceItemProps) {
                   {experience.company}
                 </p>
               </div>
-              <div className="flex items-center gap-2 text-sm text-muted-foreground bg-muted/50 px-3 py-1 rounded-full w-fit whitespace-nowrap ml-16 sm:ml-0">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground bg-muted/50 px-3 py-1 rounded-full w-fit sm:whitespace-nowrap">
                 <Calendar className="h-4 w-4" />
                 {experience.period}
               </div>

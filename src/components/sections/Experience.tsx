@@ -35,12 +35,7 @@ export function Experience() {
         <div className="w-full max-w-6xl mx-auto bg-card/70 backdrop-blur-sm border border-primary/20 rounded-2xl p-6 sm:p-10 shadow-xl">
           <div className="w-full space-y-6">
             {experiences.map((exp, index) => (
-              <ExperienceItem
-                key={index}
-                experience={exp}
-                content={content}
-                value={`item-${index}`}
-              />
+              <ExperienceItem key={index} experience={exp} />
             ))}
           </div>
         </div>
