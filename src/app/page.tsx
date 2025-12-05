@@ -3,7 +3,7 @@ import { Activities } from "@/components/sections/Activities";
 import { Experience } from "@/components/sections/Experience";
 import { Hero } from "@/components/sections/Hero";
 import { Projects } from "@/components/sections/Projects1";
-import { Contact } from "@/components/sections/Contact1";
+import { Contact } from "@/components/sections/Contact";
 
 export default function Home() {
   return (

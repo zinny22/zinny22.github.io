@@ -5,16 +5,6 @@ export function Footer() {
         <p className="text-balance text-center text-sm leading-loose text-muted-foreground md:text-left">
           © {new Date().getFullYear()} Zinny. All rights reserved.
         </p>
-        <div className="flex items-center gap-4">
-          <a
-            href="https://github.com/zinny22"
-            target="_blank"
-            rel="noreferrer"
-            className="text-sm font-medium underline underline-offset-4 text-muted-foreground hover:text-primary"
-          >
-            GitHub
-          </a>
-        </div>
       </div>
     </footer>
   );
