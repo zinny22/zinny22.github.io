@@ -6,6 +6,7 @@ export interface Project {
   link: string;
   github: string;
   type: string;
+  imageUrl?: string;
   details?: {
     overview: string;
     role: string[];

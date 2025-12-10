@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, Folder, ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { useLanguage } from "@/components/language-provider";
 import { useEffect, useState } from "react";
 
@@ -82,8 +83,20 @@ export function ProjectDetail() {
 
         {/* Hero Image Area */}
         <div className="aspect-video w-full overflow-hidden rounded-xl border bg-muted/50 flex items-center justify-center relative">
-          <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-point/10" />
-          <Folder className="h-24 w-24 text-muted-foreground/20" />
+          {project.imageUrl ? (
+            <Image
+              src={project.imageUrl}
+              alt={project.title}
+              fill
+              className="object-cover"
+              priority
+            />
+          ) : (
+            <>
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-point/10" />
+              <Folder className="h-24 w-24 text-muted-foreground/20" />
+            </>
+          )}
         </div>
 
         {/* Main Content */}

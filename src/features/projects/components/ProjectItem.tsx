@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/card";
 import { ExternalLink, Folder, Github } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { Project, ProjectContent } from "../types";
 
 interface ProjectItemProps {
@@ -38,8 +39,20 @@ export function ProjectItem({ project, content }: ProjectItemProps) {
               {project.type}
             </Badge>
           </div>
-          <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-point/10" />
-          <Folder className="h-16 w-16 text-muted-foreground/20 group-hover:text-primary/40 transition-colors" />
+
+          {project.imageUrl ? (
+            <Image
+              src={project.imageUrl}
+              alt={project.title}
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+          ) : (
+            <>
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-point/10" />
+              <Folder className="h-16 w-16 text-muted-foreground/20 group-hover:text-primary/40 transition-colors" />
+            </>
+          )}
         </div>
         <CardHeader>
           <div className="flex items-center justify-between">
