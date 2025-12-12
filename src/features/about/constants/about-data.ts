@@ -52,7 +52,7 @@ export const PROFILE_INFO = {
     location: "서울, 대한민국",
     years: "3년",
     yearsLabel: "경력",
-    projects: "10+",
+    projects: "4+",
     projectsLabel: "프로젝트",
   },
   en: {
@@ -60,7 +60,7 @@ export const PROFILE_INFO = {
     location: "Seoul, Republic of Korea",
     years: "3+",
     yearsLabel: "Years of Exp",
-    projects: "10+",
+    projects: "4+",
     projectsLabel: "Projects",
   },
 };

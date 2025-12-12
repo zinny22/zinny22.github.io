@@ -93,7 +93,7 @@ export const EXPERIENCES: Record<"ko" | "en", Experience[]> = {
     },
     {
       company: "BALANCE",
-      position: "Frontend Developer",
+      position: "프론트엔드 개발자",
       period: "2022.12 - 2024.03",
       summary:
         "영양제 커머스 플랫폼을 개발하며 SEO 최적화, 디자인 시스템, 콘텐츠 도구 고도화, 모노레포 전환을 주도했습니다.(현재 카페24로 전환됨)",
@@ -147,7 +147,7 @@ export const EXPERIENCES: Record<"ko" | "en", Experience[]> = {
     },
     {
       company: "YOMANNA",
-      position: "Frontend Developer",
+      position: "프론트엔드 개발자",
       period: "2022.05 - 2022.12",
       summary:
         "소셜 요리 애플리케이션의 프론트엔드 전체 설계와 주요 기능 구현을 담당하며 iOS 앱스토어 출시까지 리드했습니다.",

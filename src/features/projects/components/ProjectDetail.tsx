@@ -1,6 +1,9 @@
 "use client";
 
-import { PROJECTS } from "@/features/projects/constants/project-data";
+import {
+  PROJECTS,
+  PROJECT_CONTENT,
+} from "@/features/projects/constants/project-data";
 import { notFound, useParams } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -21,6 +24,7 @@ export function ProjectDetail() {
 
   const id = params?.id as string;
   const project = PROJECTS[language].find((p) => p.id === id);
+  const content = PROJECT_CONTENT[language];
 
   if (!mounted) {
     return null;
@@ -51,13 +55,17 @@ export function ProjectDetail() {
             <div className="space-y-1">
               <Badge
                 variant={
-                  project.type === "회사 프로젝트" ? "default" : "secondary"
+                  project.type === "회사 프로젝트" ||
+                  project.type === "Company Project"
+                    ? "default"
+                    : "secondary"
                 }
                 className="mb-2"
               >
                 {project.type}
               </Badge>
-              <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
+              <h1 className="text-3xl font-bold tracking-tight md:text-4xl flex items-center gap-3">
+                {project.icon && <span>{project.icon}</span>}
                 {project.title}
               </h1>
             </div>
@@ -99,6 +107,36 @@ export function ProjectDetail() {
           )}
         </div>
 
+        {/* Project Metadata */}
+        {(project.company || project.period || project.contribution) && (
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 rounded-xl border bg-card p-6 shadow-sm">
+            {project.company && (
+              <div className="space-y-1">
+                <h3 className="text-sm font-medium text-muted-foreground">
+                  {content.company}
+                </h3>
+                <p className="font-medium text-lg">{project.company}</p>
+              </div>
+            )}
+            {project.period && (
+              <div className="space-y-1">
+                <h3 className="text-sm font-medium text-muted-foreground">
+                  {content.period}
+                </h3>
+                <p className="font-medium text-lg">{project.period}</p>
+              </div>
+            )}
+            {project.contribution && (
+              <div className="space-y-1">
+                <h3 className="text-sm font-medium text-muted-foreground">
+                  {content.contribution}
+                </h3>
+                <p className="font-medium text-lg">{project.contribution}</p>
+              </div>
+            )}
+          </div>
+        )}
+
         {/* Main Content */}
         <div className="grid gap-12 md:grid-cols-[2fr_1fr]">
           <div className="space-y-10">
@@ -106,18 +144,18 @@ export function ProjectDetail() {
               <>
                 <section className="space-y-4">
                   <h2 className="text-2xl font-semibold tracking-tight">
-                    📌 개요
+                    {content.overview}
                   </h2>
-                  <p className="leading-relaxed text-muted-foreground">
+                  <p className="leading-relaxed text-foreground">
                     {project.details.overview}
                   </p>
                 </section>
 
                 <section className="space-y-4">
                   <h2 className="text-2xl font-semibold tracking-tight">
-                    📌 역할
+                    {content.role}
                   </h2>
-                  <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                  <ul className="list-disc list-inside space-y-2 text-foreground">
                     {project.details.role.map((item, index) => (
                       <li key={index}>{item}</li>
                     ))}
@@ -126,31 +164,62 @@ export function ProjectDetail() {
 
                 <section className="space-y-4">
                   <h2 className="text-2xl font-semibold tracking-tight">
-                    📌 주요 기능
+                    {content.features}
                   </h2>
-                  <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                  <ul className="list-disc list-inside space-y-2 text-foreground">
                     {project.details.features.map((item, index) => (
                       <li key={index}>{item}</li>
                     ))}
                   </ul>
                 </section>
 
-                <section className="space-y-4">
-                  <h2 className="text-2xl font-semibold tracking-tight">
-                    📌 문제 해결 및 개선
-                  </h2>
-                  <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                    {project.details.problemSolving.map((item, index) => (
-                      <li key={index}>{item}</li>
-                    ))}
-                  </ul>
-                </section>
+                {project.details.problem &&
+                  project.details.problem.length > 0 && (
+                    <section className="space-y-4">
+                      <h2 className="text-2xl font-semibold tracking-tight">
+                        {content.problem}
+                      </h2>
+                      <ul className="list-disc list-inside space-y-2 text-foreground">
+                        {project.details.problem.map((item, index) => (
+                          <li key={index}>{item}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
+
+                {project.details.solution &&
+                  project.details.solution.length > 0 && (
+                    <section className="space-y-4">
+                      <h2 className="text-2xl font-semibold tracking-tight">
+                        {content.solution}
+                      </h2>
+                      <ul className="list-disc list-inside space-y-2 text-foreground">
+                        {project.details.solution.map((item, index) => (
+                          <li key={index}>{item}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
+
+                {project.details.problemSolving &&
+                  project.details.problemSolving.length > 0 && (
+                    <section className="space-y-4">
+                      <h2 className="text-2xl font-semibold tracking-tight">
+                        {content.problemSolving}
+                      </h2>
+                      <ul className="list-disc list-inside space-y-2 text-foreground">
+                        {project.details.problemSolving.map((item, index) => (
+                          <li key={index}>{item}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  )}
 
                 <section className="space-y-4">
                   <h2 className="text-2xl font-semibold tracking-tight">
-                    📌 성과
+                    {content.achievements}
                   </h2>
-                  <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                  <ul className="list-disc list-inside space-y-2 text-foreground">
                     {project.details.achievements.map((item, index) => (
                       <li key={index}>{item}</li>
                     ))}
@@ -167,7 +236,7 @@ export function ProjectDetail() {
           <div className="space-y-8">
             <div className="rounded-xl border bg-card text-card-foreground shadow-sm p-6 space-y-6">
               <div>
-                <h3 className="font-semibold mb-3">기술 스택</h3>
+                <h3 className="font-semibold mb-3">{content.technologies}</h3>
                 <div className="flex flex-wrap gap-2">
                   {project.details
                     ? project.details.stack.map((tech) => (

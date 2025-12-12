@@ -7,13 +7,19 @@ export interface Project {
   github: string;
   type: string;
   imageUrl?: string;
+  icon?: string;
+  company?: string;
+  period?: string;
+  contribution?: string;
   details?: {
     overview: string;
     role: string[];
     stack: string[];
     features: string[];
-    problemSolving: string[];
+    problemSolving?: string[];
     achievements: string[];
+    problem?: string[];
+    solution?: string[];
   };
 }
 
@@ -24,4 +30,14 @@ export interface ProjectContent {
   links: string;
   liveDemo: string;
   github: string;
+  overview: string;
+  role: string;
+  features: string;
+  problem: string;
+  solution: string;
+  achievements: string;
+  problemSolving: string;
+  company: string;
+  period: string;
+  contribution: string;
 }
