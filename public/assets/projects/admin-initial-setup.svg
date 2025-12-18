@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FAFC"/>
+      <stop offset="1" stop-color="#EEF2FF"/>
+    </linearGradient>
+    <filter id="shadow" x="-80" y="-80" width="1360" height="790" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#0F172A" flood-opacity="0.14"/>
+    </filter>
+    <style>
+      .title { font: 800 44px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; letter-spacing: -0.02em; }
+      .sub { font: 600 18px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; fill: #64748B; }
+      .nav { font: 700 16px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; fill: #334155; }
+      .muted { font: 600 14px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; fill: #64748B; }
+      .chip { font: 700 12px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="630" rx="36" fill="url(#bg)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="72" y="64" width="1056" height="502" rx="24" fill="#FFFFFF" stroke="#E2E8F0"/>
+
+    <!-- Sidebar -->
+    <rect x="72" y="64" width="268" height="502" rx="24" fill="#F8FAFC" stroke="#E2E8F0"/>
+    <rect x="340" y="64" width="1" height="502" fill="#E2E8F0"/>
+
+    <!-- Brand -->
+    <g>
+      <rect x="104" y="96" width="28" height="28" rx="8" fill="#22C55E"/>
+      <path d="M112 110h12" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+      <path d="M112 117h8" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+      <text x="144" y="118" class="nav">Admin Setup</text>
+    </g>
+
+    <!-- Menu -->
+    <g>
+      <rect x="104" y="154" width="204" height="36" rx="10" fill="#DCFCE7"/>
+      <rect x="116" y="166" width="12" height="12" rx="3" fill="#16A34A"/>
+      <text x="140" y="178" class="muted">상품 관리</text>
+
+      <rect x="104" y="198" width="204" height="36" rx="10" fill="#FFFFFF"/>
+      <rect x="116" y="210" width="12" height="12" rx="3" fill="#94A3B8"/>
+      <text x="140" y="222" class="muted">주문 관리</text>
+
+      <rect x="104" y="242" width="204" height="36" rx="10" fill="#FFFFFF"/>
+      <rect x="116" y="254" width="12" height="12" rx="3" fill="#94A3B8"/>
+      <text x="140" y="266" class="muted">정산/쿠폰</text>
+    </g>
+
+    <!-- Header -->
+    <text x="384" y="124" class="title" fill="#0F172A">어드민 시스템 초기 구축</text>
+    <text x="384" y="156" class="sub">아키텍처 · 공통 컴포넌트 · CI/CD</text>
+
+    <!-- Main panels -->
+    <rect x="384" y="184" width="520" height="330" rx="18" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <rect x="924" y="184" width="204" height="110" rx="18" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <rect x="924" y="306" width="204" height="208" rx="18" fill="#FFFFFF" stroke="#E2E8F0"/>
+
+    <text x="416" y="216" class="nav">Component Library</text>
+    <g>
+      <rect x="416" y="236" width="456" height="84" rx="14" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <rect x="440" y="260" width="70" height="18" rx="9" fill="#DCFCE7"/>
+      <text x="475" y="273" text-anchor="middle" class="chip" fill="#15803D">Button</text>
+      <rect x="516" y="260" width="70" height="18" rx="9" fill="#DCFCE7"/>
+      <text x="551" y="273" text-anchor="middle" class="chip" fill="#15803D">Table</text>
+      <rect x="592" y="260" width="70" height="18" rx="9" fill="#DCFCE7"/>
+      <text x="627" y="273" text-anchor="middle" class="chip" fill="#15803D">Filter</text>
+      <rect x="668" y="260" width="84" height="18" rx="9" fill="#DCFCE7"/>
+      <text x="710" y="273" text-anchor="middle" class="chip" fill="#15803D">Select</text>
+      <text x="440" y="300" class="muted">shadcn/ui 기반 공통 UI 컴포넌트화</text>
+
+      <rect x="416" y="330" width="456" height="96" rx="14" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="440" y="360" class="nav">Routes &amp; Modules</text>
+      <rect x="440" y="378" width="280" height="12" rx="6" fill="#E2E8F0"/>
+      <rect x="440" y="400" width="220" height="12" rx="6" fill="#E2E8F0"/>
+
+      <rect x="416" y="436" width="456" height="58" rx="14" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="440" y="470" class="muted">GitHub Actions + Vercel 무중단 배포</text>
+    </g>
+
+    <text x="948" y="216" class="nav">Status</text>
+    <rect x="948" y="232" width="156" height="14" rx="7" fill="#DCFCE7"/>
+    <rect x="948" y="232" width="120" height="14" rx="7" fill="#22C55E"/>
+    <text x="948" y="268" class="muted">MVP Ready</text>
+
+    <text x="948" y="338" class="nav">Pipeline</text>
+    <g>
+      <rect x="948" y="356" width="156" height="34" rx="10" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="972" y="378" class="muted">Build</text>
+      <rect x="948" y="398" width="156" height="34" rx="10" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="972" y="420" class="muted">Test</text>
+      <rect x="948" y="440" width="156" height="34" rx="10" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="972" y="462" class="muted">Deploy</text>
+    </g>
+  </g>
+</svg>

@@ -13,7 +13,15 @@ import Image from "next/image";
 import { useLanguage } from "@/components/language-provider";
 import { useEffect, useState } from "react";
 
-export function ProjectDetail() {
+interface ProjectDetailProps {
+  showBackButton?: boolean;
+  projectId?: string;
+}
+
+export function ProjectDetail({
+  showBackButton = true,
+  projectId,
+}: ProjectDetailProps) {
   const params = useParams();
   const { language } = useLanguage();
   const [mounted, setMounted] = useState(false);
@@ -22,7 +30,7 @@ export function ProjectDetail() {
     setMounted(true);
   }, []);
 
-  const id = params?.id as string;
+  const id = projectId ?? (params?.id as string);
   const project = PROJECTS[language].find((p) => p.id === id);
   const content = PROJECT_CONTENT[language];
 
@@ -36,21 +44,23 @@ export function ProjectDetail() {
 
   return (
     <div className="container max-w-4xl py-12 md:py-20">
-      <div className="mb-8">
-        <Button asChild variant="ghost" className="pl-0 hover:pl-0">
-          <Link
-            href="/#projects"
-            className="flex items-center gap-2 text-muted-foreground hover:text-foreground"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back to Projects
-          </Link>
-        </Button>
-      </div>
+      {showBackButton && (
+        <div className="mb-8">
+          <Button asChild variant="ghost" className="pl-0 hover:pl-0">
+            <Link
+              href="/#projects"
+              className="flex items-center gap-2 text-muted-foreground hover:text-foreground"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              Back to Projects
+            </Link>
+          </Button>
+        </div>
+      )}
 
       <div className="grid gap-8">
-        {/* Header Section */}
-        <div className="space-y-4">
+        {/* 프로젝트 정보 */}
+        <div className="space-y-6">
           <div className="flex items-start justify-between gap-4">
             <div className="space-y-1">
               <Badge
@@ -86,10 +96,10 @@ export function ProjectDetail() {
               )}
             </div>
           </div>
-          <p className="text-xl text-muted-foreground">{project.description}</p>
+          <p className="text-md text-muted-foreground">{project.description}</p>
         </div>
 
-        {/* Hero Image Area */}
+        {/* 썸네일 */}
         <div className="aspect-video w-full overflow-hidden rounded-xl border bg-muted/50 flex items-center justify-center relative">
           {project.imageUrl ? (
             <Image
@@ -107,9 +117,9 @@ export function ProjectDetail() {
           )}
         </div>
 
-        {/* Project Metadata */}
+        {/* 프로젝트 메타데이터 */}
         {(project.company || project.period || project.contribution) && (
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 rounded-xl border bg-card p-6 shadow-sm">
+          <div className="grid grid-cols-3 gap-6 rounded-xl border bg-card p-6 shadow-sm">
             {project.company && (
               <div className="space-y-1">
                 <h3 className="text-sm font-medium text-muted-foreground">
@@ -137,7 +147,7 @@ export function ProjectDetail() {
           </div>
         )}
 
-        {/* Main Content */}
+        {/* 메인 컨텐츠 */}
         <div className="grid gap-12 md:grid-cols-[2fr_1fr]">
           <div className="space-y-10">
             {project.details ? (

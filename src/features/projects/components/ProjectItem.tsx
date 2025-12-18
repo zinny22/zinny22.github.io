@@ -12,24 +12,24 @@ import {
 import { ExternalLink, Folder, Github } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { Project, ProjectContent } from "../types";
+import { Project } from "../types";
 
 interface ProjectItemProps {
   project: Project;
-  content: ProjectContent;
 }
 
-export function ProjectItem({ project, content }: ProjectItemProps) {
+export function ProjectItem({ project }: ProjectItemProps) {
   return (
     <Card className="flex flex-col overflow-hidden border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/50 hover:shadow-lg transition-all duration-300 group relative">
       <Link
-        href={`/projects/${project.id}`}
+        href={`/?project=${project.id}#projects`}
+        scroll={false}
         className="absolute inset-0 z-0"
         aria-label={`View ${project.title}`}
       />
 
       <div className="relative z-10 flex flex-col h-full pointer-events-none">
-        <div className="relative aspect-video bg-muted/50 w-full overflow-hidden flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+        <div className="relative aspect-video bg-muted/50 w-full overflow-hidden flex items-center justify-center">
           <div className="absolute top-3 right-3 z-10">
             <Badge
               variant={
@@ -45,7 +45,7 @@ export function ProjectItem({ project, content }: ProjectItemProps) {
               src={project.imageUrl}
               alt={project.title}
               fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              className="object-cover"
             />
           ) : (
             <>

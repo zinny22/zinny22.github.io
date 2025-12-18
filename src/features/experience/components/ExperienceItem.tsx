@@ -54,7 +54,7 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
           {experience.projects.map((project, idx) => (
             <div key={idx} className="space-y-2">
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <p className="text-sm font-semibold flex items-center gap-2">
+                <p className="font-semibold flex items-center gap-2">
                   <CheckCircle2 className="h-4 w-4 text-primary" />
                   {project.title}
                 </p>
@@ -79,9 +79,9 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
                 {project.bullets.map((bullet, i) => (
                   <li
                     key={i}
-                    className="text-sm text-muted-foreground flex items-start gap-2"
+                    className="text-muted-foreground flex items-start gap-2"
                   >
-                    <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary/50 flex-shrink-0" />
+                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-primary/50 flex-shrink-0 " />
                     {bullet}
                   </li>
                 ))}

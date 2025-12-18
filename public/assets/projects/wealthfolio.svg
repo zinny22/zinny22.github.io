@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FAFC"/>
+      <stop offset="1" stop-color="#EEF2FF"/>
+    </linearGradient>
+    <filter id="shadow" x="-80" y="-80" width="1360" height="790" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#0F172A" flood-opacity="0.14"/>
+    </filter>
+    <style>
+      .title { font: 800 44px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; letter-spacing: -0.02em; }
+      .sub { font: 600 18px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; fill: #64748B; }
+      .nav { font: 700 16px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; fill: #334155; }
+      .muted { font: 600 14px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; fill: #64748B; }
+      .chip { font: 700 12px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="630" rx="36" fill="url(#bg)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="72" y="64" width="1056" height="502" rx="24" fill="#FFFFFF" stroke="#E2E8F0"/>
+
+    <!-- Sidebar -->
+    <rect x="72" y="64" width="268" height="502" rx="24" fill="#F8FAFC" stroke="#E2E8F0"/>
+    <rect x="340" y="64" width="1" height="502" fill="#E2E8F0"/>
+
+    <!-- Brand -->
+    <g>
+      <rect x="104" y="96" width="28" height="28" rx="8" fill="#111827"/>
+      <path d="M112 110h12" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+      <path d="M112 117h8" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+      <text x="144" y="118" class="nav">Wealthfolio</text>
+    </g>
+
+    <!-- Menu -->
+    <g>
+      <rect x="104" y="154" width="204" height="36" rx="10" fill="#E5E7EB"/>
+      <rect x="116" y="166" width="12" height="12" rx="3" fill="#111827"/>
+      <text x="140" y="178" class="muted">대시보드</text>
+
+      <rect x="104" y="198" width="204" height="36" rx="10" fill="#FFFFFF"/>
+      <rect x="116" y="210" width="12" height="12" rx="3" fill="#94A3B8"/>
+      <text x="140" y="222" class="muted">포트폴리오</text>
+
+      <rect x="104" y="242" width="204" height="36" rx="10" fill="#FFFFFF"/>
+      <rect x="116" y="254" width="12" height="12" rx="3" fill="#94A3B8"/>
+      <text x="140" y="266" class="muted">현금/예적금</text>
+
+      <rect x="104" y="286" width="204" height="36" rx="10" fill="#FFFFFF"/>
+      <rect x="116" y="298" width="12" height="12" rx="3" fill="#94A3B8"/>
+      <text x="140" y="310" class="muted">보험/연금</text>
+    </g>
+
+    <!-- Header -->
+    <text x="384" y="124" class="title" fill="#0F172A">Personal Asset Manager</text>
+    <text x="384" y="156" class="sub">Dashboard · Allocation · Multi-asset tracking</text>
+
+    <!-- Top summary cards -->
+    <g>
+      <rect x="384" y="184" width="220" height="88" rx="16" fill="#FFFFFF" stroke="#E2E8F0"/>
+      <text x="404" y="214" class="muted">TOTAL ASSETS</text>
+      <text x="404" y="246" class="nav">₩ 0</text>
+
+      <rect x="616" y="184" width="220" height="88" rx="16" fill="#FFFFFF" stroke="#E2E8F0"/>
+      <text x="636" y="214" class="muted">STOCK HOLDINGS</text>
+      <text x="636" y="246" class="nav">₩ 0</text>
+
+      <rect x="848" y="184" width="280" height="88" rx="16" fill="#FFFFFF" stroke="#E2E8F0"/>
+      <text x="868" y="214" class="muted">CASH &amp; SAVINGS</text>
+      <text x="868" y="246" class="nav">₩ 0</text>
+    </g>
+
+    <!-- Breakdown cards -->
+    <text x="384" y="306" class="nav">ASSET BREAKDOWN</text>
+    <g>
+      <rect x="384" y="324" width="320" height="92" rx="16" fill="#FFFFFF" stroke="#E2E8F0"/>
+      <text x="404" y="356" class="muted">Stocks</text>
+      <text x="404" y="388" class="nav">₩ 0</text>
+      <rect x="640" y="352" width="44" height="10" rx="5" fill="#DCFCE7"/>
+
+      <rect x="716" y="324" width="320" height="92" rx="16" fill="#FFFFFF" stroke="#E2E8F0"/>
+      <text x="736" y="356" class="muted">Cash</text>
+      <text x="736" y="388" class="nav">₩ 0</text>
+      <rect x="972" y="352" width="44" height="10" rx="5" fill="#DBEAFE"/>
+
+      <rect x="384" y="424" width="320" height="92" rx="16" fill="#FFFFFF" stroke="#E2E8F0"/>
+      <text x="404" y="456" class="muted">Savings</text>
+      <text x="404" y="488" class="nav">₩ 0</text>
+      <rect x="640" y="452" width="44" height="10" rx="5" fill="#F3E8FF"/>
+
+      <rect x="716" y="424" width="320" height="92" rx="16" fill="#FFFFFF" stroke="#E2E8F0"/>
+      <text x="736" y="456" class="muted">Insurance</text>
+      <text x="736" y="488" class="nav">₩ 0</text>
+      <rect x="972" y="452" width="44" height="10" rx="5" fill="#FFEDD5"/>
+    </g>
+
+    <!-- Allocation panel -->
+    <rect x="1048" y="324" width="80" height="192" rx="16" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="1064" y="356" class="muted">ALLOCATION</text>
+    <circle cx="1088" cy="430" r="44" fill="#F8FAFC" stroke="#E2E8F0"/>
+    <path d="M1088 386a44 44 0 0 1 44 44h-44z" fill="#111827" fill-opacity="0.85"/>
+    <path d="M1088 430h44a44 44 0 0 1-26 40z" fill="#0EA5E9" fill-opacity="0.75"/>
+    <path d="M1088 430l18 40a44 44 0 0 1-58-22z" fill="#A855F7" fill-opacity="0.65"/>
+
+    <!-- Footer hint -->
+    <g>
+      <rect x="104" y="526" width="204" height="28" rx="10" fill="#111827"/>
+      <text x="206" y="545" text-anchor="middle" class="chip" fill="#FFFFFF">Local Storage Persist</text>
+    </g>
+  </g>
+</svg>

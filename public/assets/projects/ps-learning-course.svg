@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+   <defs>
+     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="630" gradientUnits="userSpaceOnUse">
+       <stop stop-color="#F8FAFC"/>
+       <stop offset="1" stop-color="#EEF2FF"/>
+     </linearGradient>
+     <filter id="shadow" x="-80" y="-80" width="1360" height="790" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+       <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#0F172A" flood-opacity="0.14"/>
+     </filter>
+     <style>
+       .title { font: 800 44px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; letter-spacing: -0.02em; }
+       .sub { font: 600 18px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; fill: #64748B; }
+       .nav { font: 700 16px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; fill: #334155; }
+       .muted { font: 600 14px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; fill: #64748B; }
+       .chip { font: 700 12px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
+     </style>
+   </defs>
+
+   <rect width="1200" height="630" rx="36" fill="url(#bg)"/>
+
+   <!-- App frame -->
+   <g filter="url(#shadow)">
+     <rect x="72" y="64" width="1056" height="502" rx="24" fill="#FFFFFF" stroke="#E2E8F0"/>
+
+     <!-- Sidebar -->
+     <rect x="72" y="64" width="256" height="502" rx="24" fill="#F8FAFC" stroke="#E2E8F0"/>
+     <rect x="328" y="64" width="1" height="502" fill="#E2E8F0"/>
+
+     <!-- Brand -->
+     <g>
+       <rect x="104" y="96" width="28" height="28" rx="8" fill="#2563EB"/>
+       <path d="M112 110h12" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+       <path d="M112 117h8" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+       <text x="144" y="118" class="nav">PS Learning</text>
+     </g>
+
+     <!-- Sidebar menu -->
+     <g>
+       <rect x="104" y="154" width="192" height="36" rx="10" fill="#EEF2FF"/>
+       <rect x="116" y="166" width="12" height="12" rx="3" fill="#2563EB"/>
+       <text x="140" y="178" class="muted">학습 코스</text>
+
+       <rect x="104" y="198" width="192" height="36" rx="10" fill="#FFFFFF"/>
+       <rect x="116" y="210" width="12" height="12" rx="3" fill="#94A3B8"/>
+       <text x="140" y="222" class="muted">주차별 계획</text>
+
+       <rect x="104" y="242" width="192" height="36" rx="10" fill="#FFFFFF"/>
+       <rect x="116" y="254" width="12" height="12" rx="3" fill="#94A3B8"/>
+       <text x="140" y="266" class="muted">문제 은행</text>
+     </g>
+
+     <!-- Weekly list -->
+     <text x="104" y="320" class="muted">WEEKLY ROADMAP</text>
+     <g>
+       <rect x="104" y="338" width="192" height="34" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+       <rect x="116" y="347" width="18" height="18" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+       <text x="144" y="360" class="muted">1 수학</text>
+       <rect x="104" y="378" width="192" height="34" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+       <rect x="116" y="387" width="18" height="18" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+       <text x="144" y="400" class="muted">2 자료구조</text>
+       <rect x="104" y="418" width="192" height="34" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+       <rect x="116" y="427" width="18" height="18" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+       <text x="144" y="440" class="muted">3 그래프</text>
+     </g>
+
+     <!-- Main header -->
+     <text x="372" y="124" class="title" fill="#0F172A">PS Learning Course</text>
+     <text x="372" y="156" class="sub">주차별 로드맵 · 문제 은행 · 노트/코드 기록 · 진도 관리</text>
+
+     <!-- Content layout -->
+     <rect x="372" y="184" width="520" height="330" rx="18" fill="#FFFFFF" stroke="#E2E8F0"/>
+     <rect x="912" y="184" width="184" height="110" rx="18" fill="#FFFFFF" stroke="#E2E8F0"/>
+     <rect x="912" y="306" width="184" height="208" rx="18" fill="#FFFFFF" stroke="#E2E8F0"/>
+
+     <!-- Left content: cards -->
+     <text x="404" y="216" class="nav">Practice Problems</text>
+     <g>
+       <rect x="404" y="236" width="456" height="88" rx="14" fill="#F8FAFC" stroke="#E2E8F0"/>
+       <text x="428" y="266" class="nav">별 찍기 - 1</text>
+       <rect x="428" y="284" width="44" height="18" rx="9" fill="#EEF2FF"/>
+       <text x="450" y="297" text-anchor="middle" class="chip" fill="#2563EB">#math</text>
+       <rect x="504" y="284" width="56" height="18" rx="9" fill="#F1F5F9"/>
+       <text x="532" y="297" text-anchor="middle" class="chip" fill="#64748B">TODO</text>
+
+       <rect x="404" y="334" width="456" height="88" rx="14" fill="#F8FAFC" stroke="#E2E8F0"/>
+       <text x="428" y="364" class="nav">수 찾기</text>
+       <rect x="428" y="382" width="44" height="18" rx="9" fill="#EEF2FF"/>
+       <text x="450" y="395" text-anchor="middle" class="chip" fill="#2563EB">#prime</text>
+       <rect x="504" y="382" width="56" height="18" rx="9" fill="#F1F5F9"/>
+       <text x="532" y="395" text-anchor="middle" class="chip" fill="#64748B">DONE</text>
+
+       <rect x="404" y="432" width="456" height="62" rx="14" fill="#F8FAFC" stroke="#E2E8F0"/>
+       <text x="428" y="470" class="muted">Markdown memo + Code editor + PDF(print) ready</text>
+     </g>
+
+     <!-- Right: progress widget -->
+     <text x="936" y="216" class="nav">진행률</text>
+     <rect x="936" y="232" width="136" height="14" rx="7" fill="#F1F5F9"/>
+     <rect x="936" y="232" width="46" height="14" rx="7" fill="#2563EB"/>
+     <text x="936" y="268" class="muted">0% (0/12)</text>
+
+     <!-- Right: checklist -->
+     <text x="936" y="338" class="nav">Checklist</text>
+     <g>
+       <rect x="936" y="356" width="14" height="14" rx="4" fill="#FFFFFF" stroke="#CBD5E1"/>
+       <text x="960" y="368" class="muted">공식을 외워서 바로 적용할 수 있는가</text>
+       <rect x="936" y="382" width="14" height="14" rx="4" fill="#FFFFFF" stroke="#CBD5E1"/>
+       <text x="960" y="394" class="muted">풀이를 노트로 정리했는가</text>
+       <rect x="936" y="408" width="14" height="14" rx="4" fill="#FFFFFF" stroke="#CBD5E1"/>
+       <text x="960" y="420" class="muted">RETRY 문제를 분리했는가</text>
+     </g>
+   </g>
+ </svg>
