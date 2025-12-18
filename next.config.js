@@ -9,6 +9,9 @@ const nextConfig = {
   output: "export",
   reactStrictMode: true,
   assetPrefix: !debug ? `/` : "",
+  images: {
+    unoptimized: true,
+  },
   trailingSlash: true,
 };
 

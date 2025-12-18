@@ -13,6 +13,29 @@ import Image from "next/image";
 import { useLanguage } from "@/components/language-provider";
 import { useEffect, useState } from "react";
 
+function renderTextWithLinks(text: string) {
+  const urlRegex = /(https?:\/\/[^\s]+)/g;
+  const parts = text.split(urlRegex);
+
+  return parts.map((part, index) => {
+    if (urlRegex.test(part)) {
+      return (
+        <a
+          key={`${part}-${index}`}
+          href={part}
+          target="_blank"
+          rel="noreferrer"
+          className="text-primary underline underline-offset-4 pointer-events-auto"
+        >
+          {part}
+        </a>
+      );
+    }
+
+    return <span key={`${part}-${index}`}>{part}</span>;
+  });
+}
+
 interface ProjectDetailProps {
   showBackButton?: boolean;
   projectId?: string;
@@ -96,7 +119,9 @@ export function ProjectDetail({
               )}
             </div>
           </div>
-          <p className="text-md text-muted-foreground">{project.description}</p>
+          <p className="text-md text-muted-foreground">
+            {renderTextWithLinks(project.description)}
+          </p>
         </div>
 
         {/* 썸네일 */}
@@ -119,30 +144,45 @@ export function ProjectDetail({
 
         {/* 프로젝트 메타데이터 */}
         {(project.company || project.period || project.contribution) && (
-          <div className="grid grid-cols-3 gap-6 rounded-xl border bg-card p-6 shadow-sm">
+          <div className="flex flex-wrap items-center gap-2">
             {project.company && (
-              <div className="space-y-1">
-                <h3 className="text-sm font-medium text-muted-foreground">
+              <Badge
+                variant="secondary"
+                className="max-w-full whitespace-normal break-words h-auto px-3 py-1.5 gap-2 inline-flex items-center"
+              >
+                <span className="text-[11px] font-medium text-muted-foreground">
                   {content.company}
-                </h3>
-                <p className="font-medium text-lg">{project.company}</p>
-              </div>
+                </span>
+                <span className="text-sm font-semibold text-foreground">
+                  {project.company}
+                </span>
+              </Badge>
             )}
             {project.period && (
-              <div className="space-y-1">
-                <h3 className="text-sm font-medium text-muted-foreground">
+              <Badge
+                variant="secondary"
+                className="max-w-full whitespace-normal break-words h-auto px-3 py-1.5 gap-2 inline-flex items-center"
+              >
+                <span className="text-[11px] font-medium text-muted-foreground">
                   {content.period}
-                </h3>
-                <p className="font-medium text-lg">{project.period}</p>
-              </div>
+                </span>
+                <span className="text-sm font-semibold text-foreground">
+                  {project.period}
+                </span>
+              </Badge>
             )}
             {project.contribution && (
-              <div className="space-y-1">
-                <h3 className="text-sm font-medium text-muted-foreground">
+              <Badge
+                variant="secondary"
+                className="max-w-full whitespace-normal break-words h-auto px-3 py-1.5 gap-2 inline-flex items-center"
+              >
+                <span className="text-[11px] font-medium text-muted-foreground">
                   {content.contribution}
-                </h3>
-                <p className="font-medium text-lg">{project.contribution}</p>
-              </div>
+                </span>
+                <span className="text-sm font-semibold text-foreground">
+                  {project.contribution}
+                </span>
+              </Badge>
             )}
           </div>
         )}
@@ -157,7 +197,7 @@ export function ProjectDetail({
                     {content.overview}
                   </h2>
                   <p className="leading-relaxed text-foreground">
-                    {project.details.overview}
+                    {renderTextWithLinks(project.details.overview)}
                   </p>
                 </section>
 
@@ -167,7 +207,7 @@ export function ProjectDetail({
                   </h2>
                   <ul className="list-disc list-inside space-y-2 text-foreground">
                     {project.details.role.map((item, index) => (
-                      <li key={index}>{item}</li>
+                      <li key={index}>{renderTextWithLinks(item)}</li>
                     ))}
                   </ul>
                 </section>
@@ -178,7 +218,7 @@ export function ProjectDetail({
                   </h2>
                   <ul className="list-disc list-inside space-y-2 text-foreground">
                     {project.details.features.map((item, index) => (
-                      <li key={index}>{item}</li>
+                      <li key={index}>{renderTextWithLinks(item)}</li>
                     ))}
                   </ul>
                 </section>
@@ -191,7 +231,7 @@ export function ProjectDetail({
                       </h2>
                       <ul className="list-disc list-inside space-y-2 text-foreground">
                         {project.details.problem.map((item, index) => (
-                          <li key={index}>{item}</li>
+                          <li key={index}>{renderTextWithLinks(item)}</li>
                         ))}
                       </ul>
                     </section>
@@ -205,7 +245,7 @@ export function ProjectDetail({
                       </h2>
                       <ul className="list-disc list-inside space-y-2 text-foreground">
                         {project.details.solution.map((item, index) => (
-                          <li key={index}>{item}</li>
+                          <li key={index}>{renderTextWithLinks(item)}</li>
                         ))}
                       </ul>
                     </section>
@@ -219,7 +259,7 @@ export function ProjectDetail({
                       </h2>
                       <ul className="list-disc list-inside space-y-2 text-foreground">
                         {project.details.problemSolving.map((item, index) => (
-                          <li key={index}>{item}</li>
+                          <li key={index}>{renderTextWithLinks(item)}</li>
                         ))}
                       </ul>
                     </section>
@@ -231,7 +271,7 @@ export function ProjectDetail({
                   </h2>
                   <ul className="list-disc list-inside space-y-2 text-foreground">
                     {project.details.achievements.map((item, index) => (
-                      <li key={index}>{item}</li>
+                      <li key={index}>{renderTextWithLinks(item)}</li>
                     ))}
                   </ul>
                 </section>

@@ -10,10 +10,10 @@ import MenuItem from "../ui/menuItem";
 import { cn } from "@/lib/utils";
 
 const menuItems = [
-  { href: "#about", label: "About" },
-  { href: "#experience", label: "Experience" },
-  { href: "#projects", label: "Projects" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#about", hash: "#about", label: "About" },
+  { href: "/#experience", hash: "#experience", label: "Experience" },
+  { href: "/#projects", hash: "#projects", label: "Projects" },
+  { href: "/#contact", hash: "#contact", label: "Contact" },
   { href: "/resume", label: "Resume" },
 ];
 
@@ -88,7 +88,7 @@ export function Header() {
               key={item.label}
               href={item.href}
               label={item.label}
-              isSelected={hash === item.href}
+              isSelected={item.hash ? hash === item.hash : false}
               onClick={() => {
                 setTimeout(() => setIsMenuOpen(false), 200);
               }}

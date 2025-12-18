@@ -1,57 +1,65 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Download, Mail, Globe, Github, BookOpen } from "lucide-react";
+import { Download, Mail, Globe, Github } from "lucide-react";
 import { useLanguage } from "@/components/language-provider";
+import Image from "next/image";
 
 export default function ResumePage() {
   const { language } = useLanguage();
 
   const content = {
     ko: {
-      name: "Zinny",
-      title: "Frontend Developer",
+      name: "Ziny",
+      title: "프론트엔드 개발자",
       summary:
-        "작은 규모의 스타트업에서 기획부터 배포까지 전 단계에 참여하며 성장했습니다. 더 좋은 사용자 경험을 제공하기 위해 고민하고, 토론하는 것을 좋아합니다. 한 줄의 코드를 작성하더라도 의미 있는 코드를 작성하는 것을 중요하게 생각합니다. 새로운 도전을 즐기며, 밝은 에너지로 팀을 감싸며 아름다운 인터페이스를 만드는 것을 좋아합니다.",
+        "사용자 경험과 제품 완성도를 높이기 위해 문제를 정의하고, 데이터를 구조화하고, 유지보수 가능한 UI/상태 관리를 설계하는 프론트엔드 개발자입니다. Next.js/React 기반 웹 앱과 백오피스/어드민 구축 경험이 있으며, 성능 개선과 디자인 시스템 도입을 통해 팀 생산성을 높이는 일을 즐깁니다.",
       contact: {
         email: "hziny722@naver.com",
         website: "zinny-22.tistory.com",
         github: "github.com/zinny22",
       },
+      sections: {
+        summary: "요약",
+        experience: "경력",
+        activities: "활동",
+        education: "학력",
+        skills: "기술",
+      },
       experience: [
         {
           company: "xinno - poppop",
-          position: "Blockchain E-commerce Developer",
+          position: "블록체인 이커머스 어드민 개발자",
           period: "2024.07 - 현재",
           description: [
-            "정산 및 결제 관리 시스템을 구현하고 초기 어드민 시스템 아키텍처를 구축했습니다.",
-            "구매확정 기준 정산 금액 및 매출 데이터 분류 API 설계 및 개발",
-            "사내 어드민 시스템 초기 아키텍처 구축 및 Vercel 기반 CI/CD 파이프라인 구성 (무중단 배포)",
-            "디자인 시안 기반 랜딩 페이지 구현 및 반응형 레이아웃 설계 (기여도 100%)",
-            "기존 XML 기반 코드를 React/Next.js 기반으로 리팩토링",
+            "정산/결제 관리 어드민 구축: 필터링·집계·미리보기·CSV export 기능 구현",
+            "구매확정 기준 정산 금액 및 매출 데이터 분류 API 설계/개발",
+            "사내 어드민 초기 아키텍처 설계 및 Vercel 기반 CI/CD 파이프라인 구성(무중단 배포)",
+            "디자인 시안 기반 랜딩 페이지 구현 및 반응형 레이아웃 설계(기여 100%)",
+            "레거시 XML 기반 화면을 React/Next.js 기반으로 점진적 리팩토링",
           ],
         },
         {
           company: "BALANCE",
-          position: "Frontend Developer",
+          position: "프론트엔드 개발자",
           period: "2022.12 - 2024.03",
           description: [
-            "영양제 커머스 플랫폼을 개발하고 SEO 최적화 및 디자인 시스템 도입을 주도했습니다.",
-            "기술적 SEO(동적 메타태그, 사이트맵 등) 적용으로 6개월 만에 월 유입 0에서 1만으로 증가",
-            "Storybook 및 디자인 시스템 도입으로 개발 속도 향상 및 디자인 QA 시간 단축",
-            "기존 에디터를 React-Tiptap(위지위그)으로 마이그레이션하여 콘텐츠 퀄리티 향상",
-            "멀티 레포 구조를 모노 레포로 전환하여 Backoffice와 Commerce 간 라이브러리 버전 통일",
+            "영양제 커머스 플랫폼 기능 개발 및 성능/SEO 개선",
+            "기술적 SEO(동적 메타태그/사이트맵/구조화 데이터) 적용으로 6개월 내 월 유입 0 → 1만",
+            "Storybook 기반 디자인 시스템 도입으로 UI 재사용성 강화 및 디자인 QA 시간 단축",
+            "레거시 에디터를 React-Tiptap(WYSIWYG)으로 마이그레이션하여 콘텐츠 작성 UX 개선",
+            "멀티 레포를 모노레포로 전환해 Backoffice/Commerce 간 라이브러리 버전 통일",
           ],
         },
         {
           company: "YOMANNA",
-          position: "Frontend Developer",
+          position: "프론트엔드 개발자",
           period: "2022.05 - 2022.12",
           description: [
-            "소셜 요리 애플리케이션의 프론트엔드 전체 설계를 담당하고 주요 기능을 구현했습니다.",
-            "아임포트(I'mport)를 활용한 앱 내 결제 시스템 구현",
-            "유저 참여 유도를 위한 실시간 채팅 및 푸시 알림 시스템 구현",
-            "스타트업 환경에 맞는 효율적인 커뮤니케이션 워크플로우 정립 및 요청 누락 방지",
+            "소셜 요리 서비스의 프론트엔드 정보 구조/컴포넌트 설계 및 주요 기능 구현",
+            "아임포트(I’mport) 기반 인앱 결제 흐름 구현",
+            "실시간 채팅 및 푸시 알림 기능 연동으로 사용자 리텐션 강화",
+            "빠른 반복 배포 환경에서 요청 누락을 줄이기 위한 커뮤니케이션 워크플로우 정립",
           ],
         },
       ],
@@ -96,32 +104,39 @@ export default function ResumePage() {
         },
       ],
       skills: [
-        "React",
         "Next.js",
-        "React Native",
+        "React",
         "TypeScript",
         "JavaScript (ES6+)",
+        "Tailwind CSS",
+        "shadcn/ui (Radix UI)",
+        "Zustand",
         "Redux Toolkit",
         "React Query",
-        "Zustand",
-        "MobX",
-        "Tailwind CSS",
+        "Storybook",
+        "HTML5",
+        "CSS/SCSS",
         "Styled Components",
         "Emotion",
-        "SCSS",
-        "HTML5",
       ],
       download: "PDF 다운로드",
     },
     en: {
-      name: "Zinny",
+      name: "Ziny",
       title: "Frontend Developer",
       summary:
-        "I have grown by participating in all stages from planning to deployment in small-scale startups. I enjoy thinking about and discussing ways to provide better user experiences. I believe in writing meaningful code, even if it's just a single line. I enjoy taking on new challenges, surrounding the team with bright energy, and creating beautiful interfaces.",
+        "A frontend developer focused on building maintainable UI and state architecture with a strong product mindset. Experienced in building Next.js/React web apps and internal admin tools, improving performance, and introducing design systems to increase team velocity.",
       contact: {
         email: "hziny722@naver.com",
         website: "zinny-22.tistory.com",
         github: "github.com/zinny22",
+      },
+      sections: {
+        summary: "Summary",
+        experience: "Experience",
+        activities: "Activities",
+        education: "Education",
+        skills: "Skills",
       },
       experience: [
         {
@@ -129,11 +144,11 @@ export default function ResumePage() {
           position: "Blockchain E-commerce Developer",
           period: "2024.07 - Present",
           description: [
-            "Implemented settlement & payment management systems and built the initial admin system architecture from scratch.",
+            "Built an admin tool for settlement/payment management (filters, aggregation, previews, CSV export)",
             "Designed and developed APIs for settlement and sales data processing based on purchase confirmation",
-            "Built early-stage admin system architecture and established CI/CD pipelines with Vercel for zero-downtime deployment",
-            "Developed landing pages and implemented responsive UI (100% contribution)",
-            "Refactored legacy XML-based code to React/Next.js based architecture",
+            "Designed early-stage admin architecture and established CI/CD pipelines with Vercel (zero-downtime deployment)",
+            "Implemented responsive landing pages based on design specs (100% contribution)",
+            "Gradually refactored legacy XML-based screens to a React/Next.js architecture",
           ],
         },
         {
@@ -141,11 +156,11 @@ export default function ResumePage() {
           position: "Frontend Developer",
           period: "2022.12 - 2024.03",
           description: [
-            "Developed a supplement e-commerce platform. Focused on SEO optimization and design system implementation.",
-            "Increased monthly traffic from 0 to 10k in 6 months through technical SEO (Dynamic Meta Tags, Sitemap, JSON-LD)",
-            "Introduced Storybook and design system, improving development speed and reducing design QA time",
-            "Migrated legacy editor to React-Tiptap (WYSIWYG), enhancing content quality and SEO",
-            "Transitioned multi-repo structure to Mono-repo, unifying library versions between Backoffice and Commerce",
+            "Built features for a supplement e-commerce platform and improved performance/SEO",
+            "Increased monthly traffic from 0 to 10k in 6 months via technical SEO (Dynamic Meta Tags, Sitemap, structured data)",
+            "Introduced a Storybook-based design system to improve UI consistency and reduce design QA time",
+            "Migrated a legacy editor to React-Tiptap (WYSIWYG), improving content authoring UX",
+            "Migrated from multi-repo to mono-repo and unified library versions across Backoffice and Commerce",
           ],
         },
         {
@@ -153,10 +168,10 @@ export default function ResumePage() {
           position: "Frontend Developer",
           period: "2022.05 - 2022.12",
           description: [
-            "Designed and developed the entire frontend for a social cooking application from scratch.",
-            "Implemented in-app payment system using I'mport",
-            "Developed chat features and push notification systems for user engagement",
-            "Established efficient communication workflows to prevent request loss in a fast-paced startup environment",
+            "Designed the frontend architecture and implemented core features for a social cooking app",
+            "Implemented an in-app payment flow using I’mport",
+            "Integrated real-time chat and push notifications for user engagement",
+            "Improved team communication workflows to reduce missed requests in a fast-paced environment",
           ],
         },
       ],
@@ -227,46 +242,65 @@ export default function ResumePage() {
       <div className="max-w-4xl mx-auto bg-background shadow-xl rounded-lg overflow-hidden border border-border/50">
         {/* Header Section */}
         <div className="bg-primary/5 p-8 sm:p-12 border-b border-border/50">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-            <div>
-              <h1 className="text-4xl font-bold text-foreground mb-2">
-                {t.name}
-              </h1>
-              <p className="text-xl text-primary font-medium">{t.title}</p>
-            </div>
-            <Button
-              className="shrink-0 gap-2 print:hidden"
-              onClick={() => window.print()}
-            >
-              <Download className="w-4 h-4" />
-              {t.download}
-            </Button>
-          </div>
+          <div className="max-w-3xl mx-auto">
+            <div className="grid grid-cols-[1fr_auto] gap-6">
+              <div className="min-w-0">
+                <h1 className="text-4xl font-bold text-foreground mb-2">
+                  {t.name}
+                </h1>
+                <p className="text-xl text-primary font-medium">{t.title}</p>
 
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-sm text-muted-foreground">
-            <div className="flex items-center gap-2 hover:text-foreground transition-colors">
-              <Mail className="w-4 h-4" />
-              <a href={`mailto:${t.contact.email}`}>{t.contact.email}</a>
-            </div>
-            <div className="flex items-center gap-2 hover:text-foreground transition-colors">
-              <BookOpen className="w-4 h-4" />
-              <a
-                href={`https://${t.contact.website}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {t.contact.website}
-              </a>
-            </div>
-            <div className="flex items-center gap-2 hover:text-foreground transition-colors">
-              <Github className="w-4 h-4" />
-              <a
-                href={`https://${t.contact.github}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {t.contact.github}
-              </a>
+                <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-muted-foreground justify-items-start">
+                  <div className="flex items-center gap-2 hover:text-foreground transition-colors min-w-0">
+                    <Mail className="w-4 h-4 shrink-0" />
+                    <a className="truncate" href={`mailto:${t.contact.email}`}>
+                      {t.contact.email}
+                    </a>
+                  </div>
+                  <div className="flex items-center gap-2 hover:text-foreground transition-colors min-w-0">
+                    <Globe className="w-4 h-4 shrink-0" />
+                    <a
+                      className="truncate"
+                      href={`https://${t.contact.website}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {t.contact.website}
+                    </a>
+                  </div>
+                  <div className="flex items-center gap-2 hover:text-foreground transition-colors min-w-0 sm:col-span-2">
+                    <Github className="w-4 h-4 shrink-0" />
+                    <a
+                      className="truncate"
+                      href={`https://${t.contact.github}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {t.contact.github}
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="shrink-0 flex flex-col items-end gap-3">
+                <div className="relative h-32 w-32 sm:h-40 sm:w-40 overflow-hidden rounded-full border border-border/50 bg-secondary/40">
+                  <Image
+                    src="/assets/ziny.png"
+                    alt={t.name}
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+                <Button
+                  variant="secondary"
+                  className="gap-2 print:hidden w-32 sm:w-40 justify-center h-9 text-sm"
+                  onClick={() => window.print()}
+                >
+                  <Download className="w-4 h-4" />
+                  {t.download}
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -276,7 +310,7 @@ export default function ResumePage() {
           <section>
             <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
               <span className="w-1 h-8 bg-primary rounded-full inline-block"></span>
-              Summary
+              {t.sections.summary}
             </h2>
             <p className="text-muted-foreground leading-relaxed text-lg">
               {t.summary}
@@ -287,7 +321,7 @@ export default function ResumePage() {
           <section>
             <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
               <span className="w-1 h-8 bg-primary rounded-full inline-block"></span>
-              Experience
+              {t.sections.experience}
             </h2>
             <div className="space-y-8">
               {t.experience.map((exp, index) => (
@@ -321,7 +355,7 @@ export default function ResumePage() {
           <section>
             <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
               <span className="w-1 h-8 bg-primary rounded-full inline-block"></span>
-              Activities
+              {t.sections.activities}
             </h2>
             <div className="space-y-8">
               {t.activities.map((activity, index) => (
@@ -355,7 +389,7 @@ export default function ResumePage() {
           <section>
             <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
               <span className="w-1 h-8 bg-primary rounded-full inline-block"></span>
-              Education
+              {t.sections.education}
             </h2>
             <div className="space-y-6">
               {t.education.map((edu, index) => (
@@ -388,7 +422,7 @@ export default function ResumePage() {
           <section>
             <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
               <span className="w-1 h-8 bg-primary rounded-full inline-block"></span>
-              Skills
+              {t.sections.skills}
             </h2>
             <div className="flex flex-wrap gap-2">
               {t.skills.map((skill, index) => (

@@ -23,7 +23,7 @@ export const CONTACT_CONTENT = {
       },
       {
         url: "https://zinny-22.tistory.com/",
-        title: "zinny22.tistory.com",
+        title: "ziny22.tistory.com",
         description: "티스토리 방문하기",
         icon: <BookOpen className="w-6 h-6" />,
       },
@@ -57,7 +57,7 @@ export const CONTACT_CONTENT = {
       },
       {
         url: "https://zinny22.tistory.com",
-        title: "zinny22.tistory.com",
+        title: "ziny22.tistory.com",
         description: "Visit development blog",
         icon: <BookOpen className="w-6 h-6" />,
       },

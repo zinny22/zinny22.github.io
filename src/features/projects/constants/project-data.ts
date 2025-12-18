@@ -296,6 +296,68 @@ export const PROJECTS: Record<"ko" | "en", Project[]> = {
         ],
       },
     },
+    {
+      id: "with-me",
+      title: "WITH ME (네모위드미)",
+      description:
+        "혼자 집중하기 어려운 사람들을 위해, 다른 사람과 함께 실시간 화상 채팅과 공용 타이머로 몰입을 돕는 팀 프로젝트입니다.",
+      tags: ["React", "TypeScript", "WebRTC", "Socket.io", "Styled-Components"],
+      link: "",
+      github: "https://github.com/Square-with-me/Square-with-me-FE",
+      type: "팀 프로젝트",
+      company: "항해99",
+      period: "2022.02.25 ~ 2022.04.08 \n (6주)",
+      contribution: "프론트엔드(React) 팀원",
+      icon: "🧩",
+      imageUrl: "",
+      details: {
+        overview:
+          "실시간 화상 채팅방에서 서로의 집중을 응원하고, 공용 타이머/이모티콘/참여 기록을 통해 몰입 경험을 강화하는 서비스입니다.",
+        role: [
+          "React 기반 UI 구현 및 페이지 구성",
+          "실시간 기능(채팅/타이머/이모티콘) 연동을 위한 이벤트 플로우 협업",
+          "반응형 UI 구현 및 사용자 흐름 개선",
+        ],
+        stack: [
+          "React",
+          "TypeScript",
+          "WebRTC",
+          "Socket.io",
+          "Styled-Components",
+        ],
+        features: [
+          "로그인/회원가입 및 카카오 소셜 로그인",
+          "실시간 화상 채팅",
+          "실시간 이모티콘",
+          "공용 타이머",
+          "방 검색 및 카테고리별 필터링",
+          "마이페이지 참여 기록 그래프",
+          "뱃지 열람 및 대표 뱃지 설정",
+          "반응형 웹",
+        ],
+        problem: [
+          "타이머 신호가 중복 수신되어 공용 타이머가 정상적으로 동작하지 않는 이슈",
+          "뒤로가기 등 비정상 종료 시 방 퇴장을 인식하지 못해 상태가 꼬이는 이슈",
+          "입장/퇴장 시나리오에 따라 특정 유저의 비디오 스트림이 중복으로 렌더링되는 이슈",
+        ],
+        solution: [
+          "클래스형 구현을 함수형 컴포넌트 + React Hooks 기반으로 전환하고, 타이머 값은 useRef 대신 useState로 관리해 실시간 갱신을 보장",
+          "소켓을 페이지 단위 ref가 아닌 전역 상태로 관리하고(Local Storage에 방 정보가 남아있는 경우) 페이지 전환 시에도 퇴장 이벤트를 처리하도록 개선",
+          "peersRef/peers 상태 업데이트 방식을 수정해 중복 stream이 setState에 누적되지 않도록 필터링/업데이트 전략을 정리",
+          "초기 peers 목록을 한 번에 setState하는 방식 대신, map을 통해 개별 업데이트하여 중복 렌더를 방지",
+        ],
+        problemSolving: [
+          "타이머 신호 중복 이슈: 클래스형 → 함수형(훅) 전환, useState 기반으로 실시간 변경 감지",
+          "비정상 퇴장 인식: 소켓 연결을 전역화하고, 페이지 변화 시에도 퇴장 이벤트가 트리거되도록 구성",
+          "방 내부 유저/스트림 중복: peersRef 필터링 및 setState 내부 필터링으로 중복 stream 누적 방지",
+          "유저 목록 동기화: array 일괄 setState 대신 개별 업데이트로 중복 렌더 문제 완화",
+        ],
+        achievements: [
+          "팀 단위로 실시간 기능이 포함된 서비스의 개발/협업 경험 축적",
+          "발표 영상 : https://www.youtube.com/watch?v=QKoJh3oyPMs",
+        ],
+      },
+    },
   ],
   en: [
     {
@@ -588,6 +650,69 @@ export const PROJECTS: Record<"ko" | "en", Project[]> = {
         achievements: [
           "Replaced spreadsheet-based tracking with a consistent UI for input, review, and summaries",
           "Delivered a dashboard-first personal tool for fast understanding of asset allocation",
+        ],
+      },
+    },
+    {
+      id: "with-me",
+      title: "WITH ME (Square with me)",
+      description:
+        "A team project that helps people focus together through real-time video chat and a shared timer.",
+      tags: ["React", "TypeScript", "WebRTC", "Socket.io", "Styled-Components"],
+      link: "",
+      github: "https://github.com/Square-with-me/Square-with-me-FE",
+      type: "Team Project",
+      company: "Square with me",
+      period: "2022-02-25 ~ 2022-04-08 (6 weeks)",
+      contribution: "Frontend (React) team member",
+      icon: "🧩",
+      imageUrl: "",
+      details: {
+        overview:
+          "A service where users join a video chat room to encourage each other's focus, using a shared timer, reactions, and participation 기록.",
+        role: [
+          "Implemented UI and pages with React",
+          "Collaborated on real-time event flows (chat/timer/reactions)",
+          "Improved UX with responsive layout and user flow refinements",
+        ],
+        stack: [
+          "React",
+          "TypeScript",
+          "WebRTC",
+          "Socket.io",
+          "Styled-Components",
+        ],
+        features: [
+          "Login/Signup and Kakao social login",
+          "Real-time video chat",
+          "Real-time emoji reactions",
+          "Shared timer",
+          "Room search and category filters",
+          "My page with participation charts",
+          "Badges and featured badge selection",
+          "Responsive web",
+        ],
+        problem: [
+          "Duplicate timer signals caused the shared timer to behave inconsistently",
+          "Leaving via abnormal navigation (e.g., back button) wasn't detected as a room exit",
+          "Under certain join/leave sequences, video streams were duplicated in the UI",
+        ],
+        solution: [
+          "Refactored from class-style implementation to functional components with React Hooks; replaced useRef with useState for timer values to ensure real-time updates",
+          "Managed sockets in a global store so room exit events can be handled even across navigation changes (using persisted room info)",
+          "Adjusted peersRef/peers update strategy to filter duplicates and prevent duplicated streams from being appended to state",
+          "Avoided one-shot setState(array) for initial peer list; updated peers incrementally to reduce duplicate rendering",
+        ],
+        problemSolving: [
+          "Duplicate timer signals: moved to functional hooks approach and state-driven timer updates",
+          "Abnormal exit detection: global socket management + navigation-aware exit events",
+          "Stream duplication: filtered via peersRef and state-level filtering to prevent duplicates",
+          "Peer list sync: incremental updates instead of one-shot array assignment",
+        ],
+        achievements: [
+          "Gained hands-on collaboration experience building a service with real-time features",
+          "Troubleshooting Wiki: https://github.com/Square-with-me/Square-with-me-FE/wiki/%F0%9F%91%A9%E2%80%8D%F0%9F%92%BB-FE-%EA%B8%B0%EC%88%A0%EC%A0%81-%EB%8F%84%EC%A0%84-%EB%B0%8F-%ED%8A%B8%EB%9F%AC%EB%B8%94-%EC%8A%88%ED%8C%85-%F0%9F%94%A5",
+          "FE Repo: https://github.com/Square-with-me/Square-with-me-FE",
         ],
       },
     },
