@@ -10,45 +10,60 @@ export const SKILLS = [
   "Next.js",
   "React Native",
   "NestJS",
+  "Prisma",
+  "PostgreSQL",
+  "MySQL",
+  "Redis",
   "TypeScript",
-  "JavaScript (ES6+)",
-  "Redux Toolkit",
-  "React Query",
   "Zustand",
-  "MobX",
+  "React Query",
   "Tailwind CSS",
-  "Styled Components",
-  "Emotion",
-  "SCSS",
-  "HTML5",
+  "Vercel",
+  "GitHub Actions",
+  "Datadog",
+  "Git",
+  "DataGrip",
+  "Storybook",
+  "Redux Toolkit",
+  "Shadcn/UI",
 ];
 
 export const ABOUT_TEXTS = {
   ko: {
     titlePrefix: "복잡한 시스템을",
     titleHighlight: "직관적인 인터페이스로",
-    description: `현재 (주)엑시노에서 어드민 시스템 전반을 담당하며, Next.js와 Tailwind CSS로 화면을 설계하고 NestJS로 간단한 백엔드 API도 함께 개발하고 있습니다.
-기획자나 디자이너 없이 컴포넌트 구조를 직접 설계하고, 일관성 있는 UI를 구현해온 경험이 있으며 Zustand, React Query, shadcn/ui 등 최신 프론트엔드 스택을 적극적으로 사용하고 있습니다.
+    description: `• **비효율을 못 참아 직접 도구를 만듭니다.**
+반복되는 사내 업무를 해결하기 위해 노코드(No-code) 에디터와 어드민을 직접 개발해 운영 효율을 극대화합니다.
 
-프리랜서 경험을 통해 요구사항 파악과 커뮤니케이션의 중요성을 체감했고, 이전 밸런스(주)에서는 커머스 플랫폼 프론트엔드 개발자로 게이미피케이션 기능과 SEO 최적화를 전담했습니다.
+• **프론트엔드를 넘어 서비스의 E2E(End-to-End)를 구현합니다.**
+Next.js와 NestJS를 활용해 API 설계부터 DB 모델링까지 주도하며, 하나의 온전한 서비스를 구축합니다.
 
-최근에는 백엔드 연동, 데이터 구조 설계, 푸시 알림 처리 등 다양한 영역을 맡으며 자연스럽게 풀스택 개발자로 역량을 확장하고 있습니다.`,
+• **사용자 경험(UX)과 개발자 경험(DX)을 모두 고민합니다.**
+고객을 위한 0.1초 렌더링 최적화와 동료를 위한 디자인 시스템 및 자동화 도구 도입을 즐깁니다.
+
+• **수치로 증명하는 성장을 지향합니다.**
+단순 개발을 넘어 'SEO 유입 1만', '로딩 속도 98% 단축' 등 확실한 비즈니스 성과를 만들어내는 메이커입니다.`,
   },
   en: {
     titlePrefix: "Turning Complex Problems into",
     titleHighlight: "Simple Solutions",
-    description: `I currently own the overall admin system at Exyno, handling screen design with Next.js and Tailwind CSS, as well as building simple backend APIs with NestJS.
-I’m used to designing component structures without a dedicated designer or planner, and I actively leverage modern frontend tools such as Zustand, React Query, and shadcn/ui.
+    description: `• **I build tools to eliminate inefficiency.**
+I maximize operational efficiency by developing no-code editors and admin systems to solve repetitive internal tasks.
 
-Through freelance work, I’ve learned how critical clear requirements and communication are, and at my previous role at Balance Inc., I worked as a frontend engineer on a commerce platform, focusing on gamification features and SEO optimization.
+• **I implement E2E services beyond the frontend.**
+I lead everything from API design to DB modeling using Next.js and NestJS, building complete, end-to-end services.
 
-More recently, I’ve been expanding toward full stack by working on backend integration, data modeling, and push notification flows.`,
+• **I care about both User Experience (UX) and Developer Experience (DX).**
+I enjoy optimizing for 0.1s rendering for customers and introducing design systems and automation tools for teammates.
+
+• **I aim for growth proven by metrics.**
+Beyond simple development, I am a maker who delivers clear business results, such as '10k organic SEO traffic' and '98% reduction in loading speed'.`,
   },
 };
 
 export const PROFILE_INFO = {
   ko: {
-    role: "프론트엔드 개발자",
+    role: "Full-stack Scope 프론트엔드 개발자",
     location: "서울, 대한민국",
     years: "3년",
     yearsLabel: "경력",
@@ -56,7 +71,7 @@ export const PROFILE_INFO = {
     projectsLabel: "프로젝트",
   },
   en: {
-    role: "Frontend Developer",
+    role: "Frontend Developer (Full-stack Scope)",
     location: "Seoul, Republic of Korea",
     years: "3+",
     yearsLabel: "Years of Exp",

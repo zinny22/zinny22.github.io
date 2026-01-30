@@ -20,7 +20,7 @@ export function Hero() {
   const [isCodeTyping, setIsCodeTyping] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
 
-  const fullCode = `const ziny = {\n  role: "Frontend Developer",\n  skills: ["React", "Next.js", "Nest.js"],\n  passion: true,\n  code: () => {\n    return "High Quality Web";\n  },\n}`;
+  const fullCode = `const ziny = {\n  role: "FE Dev (Full-stack Scope)",\n  skills: ["Next.js", "Nest.js", "Prisma"],\n  passion: true,\n  code: () => {\n    return "Business Results via Tech";\n  },\n}`;
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -208,15 +208,18 @@ export function Hero() {
                 </div>
                 <div className="pl-4">
                   role:{" "}
-                  <span className="text-green-500">"Frontend Developer"</span>,
+                  <span className="text-green-500">
+                    "FE Dev (Full-stack Scope)"
+                  </span>
+                  ,
                 </div>
                 <div className="pl-4">
                   skills: <span className="text-yellow-500">["</span>
-                  <span className="text-green-500">React</span>
-                  <span className="text-yellow-500">", "</span>
                   <span className="text-green-500">Next.js</span>
                   <span className="text-yellow-500">", "</span>
                   <span className="text-green-500">Nest.js</span>
+                  <span className="text-yellow-500">", "</span>
+                  <span className="text-green-500">Prisma</span>
                   <span className="text-yellow-500">"]</span>,
                 </div>
                 <div className="pl-4">
@@ -229,7 +232,10 @@ export function Hero() {
                 </div>
                 <div className="pl-8">
                   <span className="text-purple-500">return</span>{" "}
-                  <span className="text-green-500">"High Quality Web"</span>;
+                  <span className="text-green-500">
+                    "Business Results via Tech"
+                  </span>
+                  ;
                 </div>
                 <div className="pl-4 text-yellow-500">{"}"}</div>
                 <div className="text-yellow-500">{"}"}</div>

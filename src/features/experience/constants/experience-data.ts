@@ -3,39 +3,27 @@ import { Experience, ExperienceContent } from "../types";
 export const EXPERIENCES: Record<"ko" | "en", Experience[]> = {
   ko: [
     {
-      company: "xinno - poppop",
-      position: "블록체인 e커머스 어드민 개발자",
+      company: "(주)비단팝팝 | PopPop",
+      position: "Frontend Developer (Full-stack Scope)",
       period: "2024.07 - 현재",
       summary:
-        "블록체인 기반 e커머스 서비스의 어드민·정산·결제 관리 시스템과 일부 백엔드 API 개발을 담당하고 있습니다.",
+        "기획과 디자인이 부재한 초기 환경에서 Next.js(FE)와 NestJS(BE)를 활용해 서비스 통합 관리자(Admin) 시스템을 E2E로 구축하였고, 반복되는 마케팅/운영 업무를 해결하기 위해 사내 자동화 도구를 독자적으로 개발해 운영 효율을 극대화했습니다.",
       url: "https://www.poppop.co.kr/",
       projects: [
         {
-          title: "어드민 정산·결제 관리 시스템 구현",
-          period: "약 3주",
-          contribution: "기여도 100%",
+          title: "서비스 통합 관리자(Admin) 시스템 E2E 구축",
+          contribution: "기여도 100% (FE) / 40% (BE Architecture)",
           bullets: [
-            "회계/자금팀과 협업해 정산·결제 플로우 요구사항을 정리하고, 내부 레퍼런스 조사·분석을 바탕으로 관리 화면 기획안을 직접 작성",
-            "구매확정 기준으로 주문/취소 내역을 분류하여 정산 금액 및 매출 데이터를 가공하는 API를 설계·개발",
+            "Next.js(FE)와 NestJS(BE)를 활용해 초기 기획/디자인이 부재한 환경에서 정보 구조 설계부터 API 구현까지 전 과정 주도",
+            "shadcn/ui 기반 디자인 시스템을 직접 배포하고 공통 컴포넌트를 정의하여 개발 생산성 확보",
+            "Vercel 기반 자동화 CI/CD 파이프라인을 구축하여 무중단 배포 및 안정적인 운영 환경 정립",
           ],
         },
         {
-          title: "사내 어드민 시스템 초기 구축",
-          contribution: "기여도 100% (백엔드 아키텍처 40%)",
-          bullets: [
-            "디자인·기획 문서 없이 정보 구조와 화면을 직접 설계하고 어드민 UI/UX를 주도",
-            "shadcn/ui 기반 디자인 시스템과 공통 컴포넌트를 정의하여 일관된 UI 제공",
-            "NestJS 기반 백엔드 API 및 데이터베이스 모델링을 설계·구현하고, 어드민 시스템 아키텍처 설계에 참여",
-            "Vercel 기반 자동화 CI/CD 파이프라인을 구성하여 무중단 배포·운영 환경을 정립",
-          ],
-        },
-        {
-          title: "랜딩 페이지 구축",
-          period: "약 1주",
+          title: "사내 운영 자동화 도구 개발",
           contribution: "기여도 100%",
           bullets: [
-            "제공된 디자인을 기반으로 전체 랜딩 페이지를 구현하고 모바일·데스크톱 대응 반응형 레이아웃을 설계",
-            "Vercel을 활용해 배포까지 전 과정을 단독으로 수행",
+            "반복되는 마케팅 및 운영 업무를 해결하기 위한 사내 자동화 툴을 독자적으로 기획 및 개발하며 운영 효율 극대화",
           ],
         },
       ],
@@ -43,185 +31,139 @@ export const EXPERIENCES: Record<"ko" | "en", Experience[]> = {
         "Next.js",
         "TypeScript",
         "Nest.js",
+        "Prisma",
         "Zustand",
         "Shadcn/ui",
-        "Tailwind CSS",
+        "Vercel",
       ],
     },
     {
-      company: "레인트",
+      company: "레인트 | Raint",
       position: "외주 프론트엔드 개발자",
       period: "2024.06 - 2024.12",
       summary:
-        "GS리테일 상품·방송 백오피스의 XML 기반 화면을 React/Next.js 기반으로 리팩터링하고, 성능 최적화 및 신규 기능 개발을 수행했습니다.",
+        "GS리테일 상품/방송 백오피스의 XML 기반 레거시 시스템을 Modern Web(React, Next.js) 환경으로 전환하고, 상태 관리 최적화를 통해 노출 속도를 98% 이상 단축했습니다.",
       projects: [
         {
-          title: "GS리테일(상품) 백오피스 리팩터링",
+          title: "리액트 렌더링 상태 성능 최적화",
           contribution: "기여도 100%",
           bullets: [
-            "기존 XML 기반 화면을 React 기반으로 전면 리팩터링",
-            "EP(엔진 페이지) 관련 신규 페이지를 설계·구현",
+            "Monolithic Context 구조로 인한 불필요한 리렌더링 문제를 해결하기 위해 도메인 단위로 상태를 분리하고 Zustand를 도입",
+            "화면 렌더링 속도를 8s → 0.1s로 단축하여 사용자 경험 대폭 개선",
           ],
         },
         {
-          title: "GS리테일(방송) 백오피스 리팩터링",
-          contribution: "기여도 25%",
-          bullets: [
-            "XML 기반 방송 백오피스 화면을 Next.js 기반 코드로 마이그레이션",
-            "도메인 이슈에 따라 일부 화면을 React로 전환하는 작업 진행",
-          ],
-        },
-        {
-          title: "리액트 Context API 최적화",
+          title: "대규모 레거시 시스템 전환",
           contribution: "기여도 100%",
           bullets: [
-            "하나의 컴포넌트에 집중되어 있던 Context를 용도별로 분리하는 구조를 제안·구현",
-            "최적화 이후 특정 화면의 노출 속도를 약 8초에서 0.1초 수준으로 개선",
+            "노후화된 XML 기반의 대규모 백오피스 시스템을 React, Next.js 기반의 Modern Web 환경으로 마이그레이션하여 유지보수성 확보",
+            "EP(엔진 페이지) 관련 신규 도메인 설계 및 구현 주도",
           ],
         },
       ],
-      skills: [
-        "React 18",
-        "React 16",
-        "Next.js",
-        "RealGrid",
-        "Zustand",
-        "MobX",
-        "Storybook",
-        "TUI",
-      ],
+      skills: ["React", "Next.js", "Zustand", "MobX", "Storybook", "RealGrid"],
     },
     {
-      company: "BALANCE",
+      company: "밸런스 | BALANCE",
       position: "프론트엔드 개발자",
       period: "2022.12 - 2024.03",
       summary:
-        "영양제 커머스 플랫폼을 개발하며 SEO 최적화, 디자인 시스템, 콘텐츠 도구 고도화, 모노레포 전환을 주도했습니다.(현재 카페24로 전환됨)",
+        "영양제 커머스 플랫폼의 프론트엔드를 담당하며 SEO 최적화로 자연 유입 1만 명을 달성하고, 모노레포 전환 및 디자인 시스템 구축을 통해 개발 생산성을 혁신했습니다.",
       url: "https://www.balance.site/",
       projects: [
         {
-          title: "검색 엔진 최적화(SEO)",
-          period: "약 2주",
+          title: "SEO 최적화 및 검색 가시성 확보",
           contribution: "기여도 100%",
           bullets: [
-            "기술 공유회를 통해 SEO의 중요성을 팀 내에 전파",
-            "동적 메타태그, 시멘틱 태그, 사이트맵, JSON-LD 등을 적용하여 6개월 만에 월 유입을 0에서 1만으로 성장",
+            "Next.js의 SSR과 동적 메타태그를 적극적으로 활용해 검색 엔진 가시성을 확보",
+            "월 자연 유입(Organic Traffic) 0 → 10,000명 달성으로 비즈니스 성장에 기여",
           ],
         },
         {
-          title: "Storybook 및 디자인 시스템 도입",
-          contribution: "기여도 50%",
+          title: "인프라 개선 및 디자인 시스템 구축",
+          contribution: "기여도 70%",
           bullets: [
-            "개발·디자인 직군 간 공통 컴포넌트 기반 협업 체계를 구축",
-            "동일한 개발 환경과 프로세스를 정립해 불필요한 커뮤니케이션과 디자인 QA 횟수를 줄이고 개발 속도 향상",
+            "Mono-repo(Turborepo)를 도입하여 코드 중복을 제거하고 라이브러리 관리 효율성 증대",
+            "Storybook 기반의 디자인 시스템을 구축하여 디자인-개발 협업 프로세스 최적화",
           ],
         },
         {
-          title: "콘텐츠 작성 에디터 고도화",
-          period: "약 2주",
+          title: "React-Tiptap 기반 에디터 고도화",
           contribution: "기여도 90%",
           bullets: [
-            "기존 텍스트 중심 에디터를 React-Tiptap 기반 WYSIWYG 에디터로 마이그레이션",
-            "콘텐츠 생산성과 퀄리티를 향상시켜 SEO 유입 증가에 기여",
-          ],
-        },
-        {
-          title: "V2(Next 14) 업데이트 및 모노레포 전환",
-          period: "약 한 달",
-          contribution: "기여도 70%",
-          bullets: [
-            "Backoffice(React)와 Commerce(Next 12)로 분리되어 있던 레포를 Mono-repo로 통합",
-            "공동 컴포넌트를 동일 버전에서 사용할 수 있도록 환경을 정리하여 라이브러리 버전 차이로 인한 개발 리소스를 절감",
-          ],
-        },
-        {
-          title: "e커머스 사이트 전체 플로우 작업 진행",
-          period: "약 한 달",
-          contribution: "기여도 70%",
-          bullets: [
-            "MVP 이전 단계부터 참여해 e커머스 전체 플로우 및 Backoffice 작업을 지속적으로 담당 (기여도 40%)",
-          ],
-        },
-      ],
-      skills: ["Next.js", "React", "Storybook", "Tailwind CSS", "React-Tiptap"],
-    },
-    {
-      company: "YOMANNA",
-      position: "프론트엔드 개발자",
-      period: "2022.05 - 2022.12",
-      summary:
-        "소셜 요리 애플리케이션의 프론트엔드 전체 설계와 주요 기능 구현을 담당하며 iOS 앱스토어 출시까지 리드했습니다.",
-      url: "https://apps.apple.com/kr/app/%EC%9A%94%EB%A7%8C%EB%82%98/id6444424936",
-      projects: [
-        {
-          title: "요리 소셜링 앱 프론트엔드 설계 및 출시",
-          period: "약 8개월",
-          contribution: "기여도 100%",
-          bullets: [
-            "서비스 초기 기획 단계부터 참여해 프론트엔드 전체 설계와 구현 담당",
-            "iOS 앱스토어 출시까지 전 과정 리드",
-          ],
-        },
-        {
-          title: "결제 및 알림 시스템 구현",
-          contribution: "기여도 100%",
-          bullets: [
-            "아임포트(I'mport)를 활용한 인앱 결제 기능 구현",
-            "FCM, Notifee를 활용해 채팅 기능 및 운영 인사이트를 위한 Push Notification 시스템 구현",
-          ],
-        },
-        {
-          title: "업무 프로세스 정립 (Asana 도입)",
-          contribution: "기여도 100%",
-          bullets: [
-            "아사나(Asana)를 도입해 빠르게 변경되는 요구사항을 체계적으로 관리",
-            "요청 누락을 방지하고 비효율적인 소통 방식을 개선",
+            "기존 텍스트 중심 에디터를 React-Tiptap 기반의 위지윅(WYSIWYG) 에디터로 마이그레이션",
+            "콘텐츠 제작 생산성을 향상시키고 SEO 최적화된 콘텐츠 발행 지원",
           ],
         },
       ],
       skills: [
-        "React.js",
+        "Next.js",
+        "React",
+        "Turborepo",
+        "Storybook",
+        "Tailwind CSS",
+        "React-Tiptap",
+      ],
+    },
+    {
+      company: "요만나 | YOMANNA",
+      position: "프론트엔드 개발자",
+      period: "2022.05 - 2022.12",
+      summary:
+        "소셜 요리 애플리케이션의 프론트엔드 전체 설계와 주요 기능 구현을 담당하며, 기획부터 iOS 앱스토어 출시까지 전 과정을 1인 리드했습니다.",
+      url: "https://apps.apple.com/kr/app/%EC%9A%94%EB%A7%8C%EB%82%98/id6444424936",
+      projects: [
+        {
+          title: "React Native 1인 개발 및 출시",
+          contribution: "기여도 100%",
+          bullets: [
+            "서비스 기획 단계부터 참여하여 프론트엔드 아키텍처 설계 및 구현 전 과정 주도",
+            "iOS 앱스토어 심사 및 최종 출시 성공",
+          ],
+        },
+        {
+          title: "주요 비즈니스 기능 구현",
+          contribution: "기여도 100%",
+          bullets: [
+            "Redux Toolkit을 활용한 정밀한 전역 상태 관리 및 데이터 흐름 설계",
+            "Iamport 결제 모듈 연동을 통한 인앱 결제 시스템 구축",
+            "FCM 기반 푸시 알림 및 실시간 알림 시스템 구현",
+          ],
+        },
+      ],
+      skills: [
         "React Native",
         "Redux Toolkit",
         "Styled-components",
+        "FCM",
+        "Iamport",
       ],
     },
   ],
   en: [
     {
-      company: "xinno - poppop",
-      position: "Blockchain E-commerce Developer",
+      company: "(주)비단팝팝 | PopPop",
+      position: "Frontend Developer (Full-stack Scope)",
       period: "2024.07 - Present",
       summary:
-        "Responsible for the frontend of a blockchain-based e-commerce service, including admin, settlement, and payment management systems, as well as some backend APIs.",
+        "In an early environment without planning and design, I built an E2E service integrated administrator (Admin) system using Next.js (FE) and NestJS (BE), and independently developed internal automation tools to maximize operational efficiency for repetitive marketing/operations tasks.",
       url: "https://www.poppop.co.kr/",
       projects: [
         {
-          title: "Settlement & payment management system",
-          period: "~3 weeks",
-          contribution: "100% ownership",
+          title:
+            "Service Integrated Administrator (Admin) System E2E Implementation",
+          contribution: "100% ownership (FE) / 40% (BE Architecture)",
           bullets: [
-            "Collaborated with accounting/finance teams to define settlement and payment flows and created admin UI specifications based on internal reference research",
-            "Designed and developed APIs to classify and process settlement amounts and sales data based on purchase confirmation from order/cancellation history",
+            "Led the entire process from information structure design to API implementation using Next.js(FE) and NestJS(BE) in an environment without initial planning/design",
+            "Ensured development productivity by deploying a shadcn/ui-based design system and defining common components",
+            "Established a stable operating environment and zero-downtime deployment by building an automated CI/CD pipeline based on Vercel",
           ],
         },
         {
-          title: "Admin system bootstrap",
-          contribution: "100% ownership (40% on backend architecture)",
-          bullets: [
-            "Bootstrapped the internal admin system from scratch, designing information architecture and screens without any design or planning documents",
-            "Defined design system and shared components using shadcn/ui for consistent UI/UX",
-            "Designed and implemented backend APIs and database modeling with NestJS, contributing to the admin system architecture",
-            "Set up automated CI/CD pipelines on Vercel to enable zero-downtime deployments and stable operations",
-          ],
-        },
-        {
-          title: "Landing page implementation",
-          period: "~1 week",
+          title: "Internal Operations Automation Tool Development",
           contribution: "100% ownership",
           bullets: [
-            "Implemented the entire landing page based on provided designs",
-            "Designed responsive layouts for mobile and desktop and handled deployment end-to-end",
+            "Maximizing operational efficiency by independently planning and developing internal automation tools to solve repetitive marketing and operational tasks",
           ],
         },
       ],
@@ -229,9 +171,10 @@ export const EXPERIENCES: Record<"ko" | "en", Experience[]> = {
         "Next.js",
         "TypeScript",
         "Nest.js",
+        "Prisma",
         "Zustand",
         "Shadcn/ui",
-        "Tailwind CSS",
+        "Vercel",
       ],
     },
     {
@@ -239,129 +182,101 @@ export const EXPERIENCES: Record<"ko" | "en", Experience[]> = {
       position: "Freelance Frontend Engineer",
       period: "2024.06 - 2024.12",
       summary:
-        "Refactored GS Retail's product and broadcast backoffice systems from XML-based pages to React/Next.js and performed performance optimizations and feature development.",
+        "Migrated GS Retail's XML-based legacy back-office systems to a Modern Web (React, Next.js) environment and reduced rendering times by over 98% through state management optimization.",
       projects: [
         {
-          title: "GS Retail (Product) backoffice refactor",
+          title: "React Rendering Performance Optimization",
           contribution: "100% contribution",
           bullets: [
-            "Migrated legacy XML-based product management screens to React-based implementation",
-            "Developed new EP (Engine Page) related pages",
+            "Solved unnecessary re-rendering issues caused by a monolithic context structure by splitting state into domain units and introducing Zustand",
+            "Improved user experience by shortening screen rendering speed from 8s to 0.1s",
           ],
         },
         {
-          title: "GS Retail (Broadcast) backoffice refactor",
-          contribution: "25% contribution",
-          bullets: [
-            "Converted XML-based broadcast backoffice screens to Next.js",
-            "Partially migrated Next.js codebase to React due to domain constraints",
-          ],
-        },
-        {
-          title: "React Context API optimization",
+          title: "Large-scale Legacy System Migration",
           contribution: "100% contribution",
           bullets: [
-            "Proposed and implemented splitting a monolithic context into multiple domain-specific contexts",
-            "Improved screen render times from around 8 seconds to 0.1 seconds",
+            "Ensured maintainability by migrating aging XML-based large-scale back-office systems to a Modern Web environment based on React and Next.js",
+            "Led the design and implementation of new domains, including Engine Pages (EP)",
           ],
         },
       ],
-      skills: [
-        "React 18",
-        "React 16",
-        "Next.js",
-        "RealGrid",
-        "Zustand",
-        "MobX",
-        "Storybook",
-        "TUI",
-      ],
+      skills: ["React", "Next.js", "Zustand", "MobX", "Storybook", "RealGrid"],
     },
     {
       company: "BALANCE",
       position: "Frontend Developer",
       period: "2022.12 - 2024.03",
       summary:
-        "Developed a supplement e-commerce platform with a strong focus on SEO, design system implementation, content tooling, and mono-repo migration.",
+        "Responsible for the frontend of a supplement e-commerce platform, achieving 10k monthly organic traffic through SEO optimization, and innovating development productivity by migrating to a mono-repo and building a design system.",
       url: "https://www.balance.site/",
       projects: [
         {
-          title: "Technical SEO",
-          period: "~2 weeks",
+          title: "SEO Optimization & Search Visibility",
           contribution: "100% contribution",
           bullets: [
-            "Led technical SEO, including dynamic meta tags, semantic HTML, sitemap, and JSON-LD",
-            "Increased monthly traffic from 0 to 10k in 6 months",
+            "Leveraged Next.js SSR and dynamic meta tags to ensure search engine visibility",
+            "Contributed to business growth by achieving 0 to 10,000 monthly organic traffic",
           ],
         },
         {
-          title: "Storybook & design system introduction",
-          contribution: "50% contribution",
-          bullets: [
-            "Introduced Storybook and a design system to align engineers and designers around shared components",
-            "Improved development speed and reduced design QA overhead",
-          ],
-        },
-        {
-          title: "Editor migration to React-Tiptap",
-          period: "~2 weeks",
-          contribution: "90% contribution",
-          bullets: [
-            "Migrated the legacy text-based editor to a React-Tiptap WYSIWYG editor",
-            "Improved content quality and SEO-driven traffic",
-          ],
-        },
-        {
-          title: "Next 14 V2 & mono-repo migration",
-          period: "~1 month",
+          title: "Infrastructure Improvement & Design System",
           contribution: "70% contribution",
           bullets: [
-            "Upgraded the architecture to a Next 14-based mono-repo, unifying Backoffice (React) and Commerce (Next 12)",
-            "Avoided duplicate work caused by differing library/framework versions and contributed continuously to both e-commerce flows and backoffice features (40% contribution)",
+            "Introduced Mono-repo (Turborepo) to eliminate code duplication and increase library management efficiency",
+            "Optimized design-development collaboration by building a Storybook-based design system",
+          ],
+        },
+        {
+          title: "React-Tiptap Based Editor Advancement",
+          contribution: "90% contribution",
+          bullets: [
+            "Migrated from a legacy text-based editor to a React-Tiptap based WYSIWYG editor",
+            "Improved content production productivity and supported the publication of SEO-optimized content",
           ],
         },
       ],
-      skills: ["Next.js", "React", "Storybook", "Tailwind CSS", "React-Tiptap"],
+      skills: [
+        "Next.js",
+        "React",
+        "Turborepo",
+        "Storybook",
+        "Tailwind CSS",
+        "React-Tiptap",
+      ],
     },
     {
       company: "YOMANNA",
       position: "Frontend Developer",
       period: "2022.05 - 2022.12",
       summary:
-        "Designed and developed the entire frontend for a social cooking application from scratch, leading it to iOS App Store launch.",
+        "Responsible for the overall frontend design and implementation of key features for a social cooking application, leading the entire process from planning to iOS App Store launch as a solo developer.",
       url: "https://apps.apple.com/kr/app/%EC%9A%94%EB%A7%8C%EB%82%98/id6444424936",
       projects: [
         {
-          title: "Social cooking app frontend & launch",
-          period: "~8 months",
+          title: "React Native Solo Development & Launch",
           contribution: "100% contribution",
           bullets: [
-            "Led frontend architecture and implementation from initial planning",
-            "Delivered the app to iOS App Store launch",
+            "Led the entire process from frontend architecture design to implementation from the service planning stage",
+            "Succesfully navigated iOS App Store review and final launch",
           ],
         },
         {
-          title: "Payment & notification systems",
+          title: "Core Business Feature Implementation",
           contribution: "100% contribution",
           bullets: [
-            "Implemented in-app payment system using I'mport",
-            "Built push notification flows for chat and operational insights using FCM and Notifee",
-          ],
-        },
-        {
-          title: "Workflow & communication improvements (Asana)",
-          contribution: "100% contribution",
-          bullets: [
-            "Introduced Asana to manage rapidly changing requests",
-            "Reduced miscommunication and prevented request loss in a fast-paced startup environment",
+            "Designed precise global state management and data flow using Redux Toolkit",
+            "Built an in-app payment system through Iamport payment module integration",
+            "Implemented FCM-based push notifications and real-time notification systems",
           ],
         },
       ],
       skills: [
-        "React.js",
         "React Native",
         "Redux Toolkit",
         "Styled-components",
+        "FCM",
+        "Iamport",
       ],
     },
   ],
