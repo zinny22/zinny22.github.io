@@ -10,7 +10,7 @@ export default function ResumePage() {
 
   const content = {
     ko: {
-      name: "Ziny",
+      name: "장혜진",
       title: "Frontend Developer (Full-stack Scope)",
       summary:
         "프론트엔드를 넘어 서비스의 E2E(End-to-End)를 구현하는 메이커입니다. Next.js와 NestJS를 활용해 API 설계부터 DB 모델링까지 주도하며, 반복되는 비효율을 해결하기 위해 사내 자동화 도구와 어드민 시스템을 독자적으로 구축하는 데 강점이 있습니다. 사용자 경험(UX) 최적화와 비즈니스 성과를 창출하는 기술 도입에 집중합니다.",
