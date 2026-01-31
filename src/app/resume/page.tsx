@@ -10,56 +10,62 @@ export default function ResumePage() {
 
   const content = {
     ko: {
-      name: "Ziny",
-      title: "프론트엔드 개발자",
+      name: "장혜진",
+      title: "Frontend Developer (Full-stack Scope)",
       summary:
-        "사용자 경험과 제품 완성도를 높이기 위해 문제를 정의하고, 데이터를 구조화하고, 유지보수 가능한 UI/상태 관리를 설계하는 프론트엔드 개발자입니다. Next.js/React 기반 웹 앱과 백오피스/어드민 구축 경험이 있으며, 성능 개선과 디자인 시스템 도입을 통해 팀 생산성을 높이는 일을 즐깁니다.",
+        "프론트엔드를 넘어 서비스의 E2E(End-to-End)를 구현하는 메이커입니다. Next.js와 NestJS를 활용해 API 설계부터 DB 모델링까지 주도하며, 반복되는 비효율을 해결하기 위해 사내 자동화 도구와 어드민 시스템을 독자적으로 구축하는 데 강점이 있습니다. 사용자 경험(UX) 최적화와 비즈니스 성과를 창출하는 기술 도입에 집중합니다.",
       contact: {
         email: "hziny722@naver.com",
         website: "zinny-22.tistory.com",
         github: "github.com/zinny22",
       },
       sections: {
-        summary: "요약",
-        experience: "경력",
-        activities: "활동",
-        education: "학력",
-        skills: "기술",
+        summary: "Summary",
+        experience: "Experience",
+        activities: "Activities",
+        education: "Education",
+        skills: "Tech Stack",
       },
       experience: [
         {
-          company: "xinno - poppop",
-          position: "블록체인 이커머스 어드민 개발자",
+          company: "(주)비단팝팝 | PopPop",
+          position: "Frontend Developer (Full-stack Scope)",
           period: "2024.07 - 현재",
           description: [
-            "정산/결제 관리 어드민 구축: 필터링·집계·미리보기·CSV export 기능 구현",
-            "구매확정 기준 정산 금액 및 매출 데이터 분류 API 설계/개발",
-            "사내 어드민 초기 아키텍처 설계 및 Vercel 기반 CI/CD 파이프라인 구성(무중단 배포)",
-            "디자인 시안 기반 랜딩 페이지 구현 및 반응형 레이아웃 설계(기여 100%)",
-            "레거시 XML 기반 화면을 React/Next.js 기반으로 점진적 리팩토링",
+            "Next.js(FE)와 NestJS(BE)를 활용해 서비스 통합 관리자(Admin) 시스템을 E2E로 구축",
+            "초기 기획/디자인 부재 환경에서 정보 구조(IA) 설계부터 DB 모델링, API 구현까지 전 과정 주도",
+            "반복되는 마케팅/운영 업무 해결을 위한 사내 자동화 도구 독자 개발 및 운영 효율 극대화",
+            "Vercel 기반 자동화 CI/CD 파이프라인 구축 및 무중단 배포 환경 정립",
           ],
         },
         {
-          company: "BALANCE",
+          company: "레인트 | Raint",
+          position: "외주 프론트엔드 개발자",
+          period: "2024.06 - 2024.12",
+          description: [
+            "Monolithic Context 구조 개선 및 Zustand 도입으로 불필요한 리렌더링 해결",
+            "화면 렌더링 속도를 8s에서 0.1s로 약 98% 단축하여 사용자 경험 개선",
+            "XML 기반 대규모 백오피스 시스템을 Modern Web(React, Next.js) 환경으로 마이그레이션",
+          ],
+        },
+        {
+          company: "밸런스 | BALANCE",
           position: "프론트엔드 개발자",
           period: "2022.12 - 2024.03",
           description: [
-            "영양제 커머스 플랫폼 기능 개발 및 성능/SEO 개선",
-            "기술적 SEO(동적 메타태그/사이트맵/구조화 데이터) 적용으로 6개월 내 월 유입 0 → 1만",
-            "Storybook 기반 디자인 시스템 도입으로 UI 재사용성 강화 및 디자인 QA 시간 단축",
-            "레거시 에디터를 React-Tiptap(WYSIWYG)으로 마이그레이션하여 콘텐츠 작성 UX 개선",
-            "멀티 레포를 모노레포로 전환해 Backoffice/Commerce 간 라이브러리 버전 통일",
+            "기술적 SEO(SSR, 동적 메타태그 등) 적용으로 월 자연 유입 0에서 10,000명 달성",
+            "Mono-repo(Turborepo) 도입으로 코드 중복 제거 및 라이브러리 관리 효율화",
+            "Storybook 기반 디자인 시스템 구축으로 디자인-개발 협업 프로세스 최적화",
+            "React-Tiptap 기반 위지윅(WYSIWYG) 에디터 고도화로 콘텐츠 제작 생산성 향상",
           ],
         },
         {
-          company: "YOMANNA",
+          company: "요만나 | YOMANNA",
           position: "프론트엔드 개발자",
           period: "2022.05 - 2022.12",
           description: [
-            "소셜 요리 서비스의 프론트엔드 정보 구조/컴포넌트 설계 및 주요 기능 구현",
-            "아임포트(I’mport) 기반 인앱 결제 흐름 구현",
-            "실시간 채팅 및 푸시 알림 기능 연동으로 사용자 리텐션 강화",
-            "빠른 반복 배포 환경에서 요청 누락을 줄이기 위한 커뮤니케이션 워크플로우 정립",
+            "React Native 기반 소셜 요리 앱 1인 개발 및 iOS 앱 스토어 출시 전 과정 리드",
+            "Redux Toolkit 상태 관리 및 Iamport 결제 모듈, FCM 푸시 알림 시스템 구축",
           ],
         },
       ],
@@ -103,29 +109,34 @@ export default function ResumePage() {
           status: "수료",
         },
       ],
-      skills: [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "JavaScript (ES6+)",
-        "Tailwind CSS",
-        "shadcn/ui (Radix UI)",
-        "Zustand",
-        "Redux Toolkit",
-        "React Query",
-        "Storybook",
-        "HTML5",
-        "CSS/SCSS",
-        "Styled Components",
-        "Emotion",
-      ],
+      skills: {
+        Frontend: [
+          "Next.js",
+          "React",
+          "React Native",
+          "TypeScript",
+          "Zustand",
+          "React Query",
+          "Tailwind CSS",
+          "Shadcn/UI",
+        ],
+        "Backend & Infra": [
+          "NestJS",
+          "Prisma",
+          "Vercel",
+          "GitHub Actions",
+          "Git",
+          "Datadog",
+        ],
+        Database: ["PostgreSQL", "MySQL", "Redis", "DataGrip"],
+      },
       download: "PDF 다운로드",
     },
     en: {
       name: "Ziny",
-      title: "Frontend Developer",
+      title: "Frontend Developer (Full-stack Scope)",
       summary:
-        "A frontend developer focused on building maintainable UI and state architecture with a strong product mindset. Experienced in building Next.js/React web apps and internal admin tools, improving performance, and introducing design systems to increase team velocity.",
+        "A maker who implements service E2E (End-to-End) beyond the frontend. I lead everything from API design to DB modeling using Next.js and NestJS, with a strength in independently building internal automation tools and admin systems to solve repetitive inefficiencies. I focus on optimizing User Experience (UX) and introducing technologies that create business results.",
       contact: {
         email: "hziny722@naver.com",
         website: "zinny-22.tistory.com",
@@ -136,19 +147,28 @@ export default function ResumePage() {
         experience: "Experience",
         activities: "Activities",
         education: "Education",
-        skills: "Skills",
+        skills: "Tech Stack",
       },
       experience: [
         {
-          company: "xinno - poppop",
-          position: "Blockchain E-commerce Developer",
+          company: "(주)비단팝팝 | PopPop",
+          position: "Frontend Developer (Full-stack Scope)",
           period: "2024.07 - Present",
           description: [
-            "Built an admin tool for settlement/payment management (filters, aggregation, previews, CSV export)",
-            "Designed and developed APIs for settlement and sales data processing based on purchase confirmation",
-            "Designed early-stage admin architecture and established CI/CD pipelines with Vercel (zero-downtime deployment)",
-            "Implemented responsive landing pages based on design specs (100% contribution)",
-            "Gradually refactored legacy XML-based screens to a React/Next.js architecture",
+            "Built service integrated administrator (Admin) systems E2E using Next.js(FE) and NestJS(BE)",
+            "Led the entire process from information structure design to DB modeling and API implementation in an environment without initial planning/design",
+            "Independently developed internal automation tools to maximize operational efficiency for repetitive marketing/operations tasks",
+            "Established a stable operating environment and zero-downtime deployment by building an automated CI/CD pipeline based on Vercel",
+          ],
+        },
+        {
+          company: "Leint | Raint",
+          position: "Freelance Frontend Engineer",
+          period: "2024.06 - 2024.12",
+          description: [
+            "Solved unnecessary re-rendering by improving monolithic context structure and introducing Zustand",
+            "Improved user experience by shortening screen rendering speed from 8s to 0.1s (approx. 98% reduction)",
+            "Migrated large-scale XML-based legacy back-office systems to a Modern Web environment (React, Next.js)",
           ],
         },
         {
@@ -156,11 +176,10 @@ export default function ResumePage() {
           position: "Frontend Developer",
           period: "2022.12 - 2024.03",
           description: [
-            "Built features for a supplement e-commerce platform and improved performance/SEO",
-            "Increased monthly traffic from 0 to 10k in 6 months via technical SEO (Dynamic Meta Tags, Sitemap, structured data)",
-            "Introduced a Storybook-based design system to improve UI consistency and reduce design QA time",
-            "Migrated a legacy editor to React-Tiptap (WYSIWYG), improving content authoring UX",
-            "Migrated from multi-repo to mono-repo and unified library versions across Backoffice and Commerce",
+            "Achieved 10,000 monthly organic traffic (0 to 10k) through technical SEO (SSR, Dynamic Meta Tags, etc.)",
+            "Eliminated code duplication and improved library management efficiency by introducing Mono-repo (Turborepo)",
+            "Optimized design-development collaboration by building a Storybook-based design system",
+            "Improved content production productivity by advancing a React-Tiptap based WYSIWYG editor",
           ],
         },
         {
@@ -168,10 +187,8 @@ export default function ResumePage() {
           position: "Frontend Developer",
           period: "2022.05 - 2022.12",
           description: [
-            "Designed the frontend architecture and implemented core features for a social cooking app",
-            "Implemented an in-app payment flow using I’mport",
-            "Integrated real-time chat and push notifications for user engagement",
-            "Improved team communication workflows to reduce missed requests in a fast-paced environment",
+            "Led the entire process of solo development and iOS App Store launch of a React Native-based social cooking app",
+            "Built Redux Toolkit-based state management, Iamport payment module, and FCM push notification systems",
           ],
         },
       ],
@@ -215,22 +232,27 @@ export default function ResumePage() {
           status: "Certificate",
         },
       ],
-      skills: [
-        "React",
-        "Next.js",
-        "React Native",
-        "TypeScript",
-        "JavaScript (ES6+)",
-        "Redux Toolkit",
-        "React Query",
-        "Zustand",
-        "MobX",
-        "Tailwind CSS",
-        "Styled Components",
-        "Emotion",
-        "SCSS",
-        "HTML5",
-      ],
+      skills: {
+        Frontend: [
+          "Next.js",
+          "React",
+          "React Native",
+          "TypeScript",
+          "Zustand",
+          "React Query",
+          "Tailwind CSS",
+          "Shadcn/UI",
+        ],
+        "Backend & Infra": [
+          "NestJS",
+          "Prisma",
+          "Vercel",
+          "GitHub Actions",
+          "Git",
+          "Datadog",
+        ],
+        Database: ["PostgreSQL", "MySQL", "Redis", "DataGrip"],
+      },
       download: "Download PDF",
     },
   };
@@ -424,14 +446,23 @@ export default function ResumePage() {
               <span className="w-1 h-8 bg-primary rounded-full inline-block"></span>
               {t.sections.skills}
             </h2>
-            <div className="flex flex-wrap gap-2">
-              {t.skills.map((skill, index) => (
-                <span
-                  key={index}
-                  className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm font-medium hover:bg-primary/10 hover:text-primary transition-colors cursor-default"
-                >
-                  {skill}
-                </span>
+            <div className="space-y-6">
+              {Object.entries(t.skills).map(([category, skills]) => (
+                <div key={category}>
+                  <h3 className="text-sm font-bold text-muted-foreground uppercase tracking-wider mb-3">
+                    {category}
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {(skills as string[]).map((skill, index) => (
+                      <span
+                        key={index}
+                        className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm font-medium hover:bg-primary/10 hover:text-primary transition-colors cursor-default"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               ))}
             </div>
           </section>
